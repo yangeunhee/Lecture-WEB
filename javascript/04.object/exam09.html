@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	class Person{ //이름이 class지만 내부적으로는 prototype의 형태를 띄고있다
+		//클래스에서 함수만들때 constructor()
+		constructor(name, phone, addr){
+			this._name = name;
+			this._phone = phone;
+			this._addr = addr;
+		}
+		
+		// getter/setter를 쓰는 순간 ._이 .을 호출
+		// person.name이라고 쓰면 person클래스 속성에 name이라는 값이 있다고 생각하기 때문에 ._로 작성해서 접근해야한다.
+		/* get name() {
+			return this._name
+		}
+		
+		set name(name){
+			this._name = name
+		} */
+	
+		info(){
+			alert(`name : ${this._name}\nphone : ${this._phone}\naddr : ${this._addr}`)
+		}
+	}
+	
+	let person = new Person('홍길동', '010-1111-2222', '서울시 서초구');
+	console.log(person)
+	person.info();
+</script>
+</head>
+<body>
+
+</body>
+</html>

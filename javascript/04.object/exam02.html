@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+/*
+ 	p : 객체명
+ 	key : 속성명
+ 	for(let key in p){
+ 
+ 	} 
+ 
+ */
+	var person = {
+		'name' : '홍길동',
+		'phone' : '010-1111-2222',
+		'addr' : '경기도 광명시',
+		'info' : function() {
+			/* alert('name : ' + this.name +'\n'	// js에서는 this를 생략할 수 없음
+					+ 'phone : ' + this.phone + '\n'
+					+ 'addr : ' + this.addr+'\n');	*/
+
+			/* let msg = '';
+					//this.을 넣어줌
+			with(this){
+				msg += 'name : ' + this.name + '\n'
+				msg += 'phone : ' + this.phone + '\n'
+				msg += 'addr : ' + this.addr + '\n'
+			}
+			alert(msg) */
+			
+			// 내 객체(this)안에 들어있는 key(속성명)을 알려줘
+			for(var key in this){
+				// 함수는 빼고 호출하고싶을 때
+				if((typeof this[key] != 'function'))
+				//if(key != 'info')
+				document.write(key + " : " +this[key]+ "<br>")	// person.key라고 하면 js가 key라는 변수가 있는거라고 생각함. 그래서 저렇게 배열처럼 호출해야함
+			}
+		}
+	}
+		//person의 toString함수를 function으로 만들고싶음
+		person.toString = function(){	// person이라는 객체에 새로운 함수를 추가할거야. 그 이름은 toString(재정의한거임 toString은 원래 정의되어있기때문)
+			let msg = '';
+			for(let key in this){
+				if((typeof this[key] != 'function'))
+					msg += `${key} : ${this[key]} <br>`
+			}
+			return msg;
+	}	
+	
+		// alert, document.write를 이용해서 객체값을 찍어라 -> tostring이라는 함수를 찍어라
+		document.write(person.toString());
+		document.write("<hr>")
+		document.write(person);
+		document.write("<hr>")
+		
+		// info 메소드 호출
+		with(person){
+		info();
+	}
+	// info 메소드 호출
+	person.info();
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function Person(n, p, a){
+		// this.name = n; // 이렇게하면 콘솔창에서 수정 가능 / 수정이 불가능하도록 하는 방법은 아래
+		let name = n;
+		var phone = p;
+		var addr = a;
+		
+/* 		this.getName = function(){ // p.name으로 접근은 못하지만 이름 값을 불러올 순 있음
+			return name;
+		} */
+
+		this.getName = () => name
+		
+		this.setName = function(n){
+			name = n
+		}
+	}
+	
+	let p = new Person('홍길동', '010-1111-2222', '경기도 광명시')
+	console.log(p)
+	
+	alert('변경전 : ' + p.getName())
+	p.setName("홍길길")
+	alert('변경후 : ' + p.getName())
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

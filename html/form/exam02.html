@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form action = "http://www.naver.com">
+		<progress value = "50" max = "100"></progress>
+	
+		색깔 : <input type = "color"><br>
+		시간 : <input type = "time"><br>
+		<input type = "month"><br>
+		<input type = "week"><br>
+		날짜 : <input type = "date" min = "2020-01-01" max = "2020-12-31"><br>
+		범위 : <input type = "range" min = "1" max = "10"><br>
+		수량 : <input type = "number" min = "1" max = "10"><br>
+		검색어 : <input type = "search" size = "50"><br>
+		전화번호 : <input type = "tel" size = "50" pattern = "(010|011|016|017|019)-\d{3,4}-\d{4}"
+		placeholder = "xxx-xxxx-xxxx 형태로 입력하세요."><!-- \d정수가 들어와야해 3,4자리로 --><br>
+		
+		이메일 : <input type = "email" size = "50" required autocomplete = "on"><br> <!-- 속성명과 속성값이 같으면 속성명만 쓰면 된다 required = "required" -> required (값을 무조건 입력받아야함), auto : 자동완성 기능 -->
+		SNS주소 : <input type = "url" size = "50"><br>
+		
+		초기화 : <input type = "reset"><br>
+		<!-- <input type = "submit" value = "전송"> -->
+		<input type = "image" src = "/Lecture-WEB/html/images/submit.jfif" width = 100 height = 50>
+	</form>
+
+</body>
+</html>

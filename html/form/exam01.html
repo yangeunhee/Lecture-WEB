@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- client가 server에게 사용자마다 자신의 어떤 정보를 전달해야할 때 쓰는 form태그 (ex. 로그인할 때 사용자마다 id, 비밀번호가 다름) -->
+
+	<!--
+		<form> : 무언가를 입력받고 submit을 누르면 내가 입력받은 값을 서버에 전송
+			<input type = "">
+				   type		text : 한 줄 입력
+				   			password : 암호처리
+				   			checkbox : 다중선택
+				   			radio : 단일선택
+				   			button : 사용자정의이벤트
+				   			file : 첨부파일
+				   			reset : 초기화
+				   			hidden : 입력받지 않은 데이터 전송
+				   			submit : 입력받은 모든 데이터 전송
+			<textarea> 		여러줄을 입력받음
+			</textarea>
+		</form>
+	-->
+	
+	<form action = "http://www.naver.com"> <!-- submit 버튼 누르면 요청하는 사이트 -->
+		
+		<fieldset>
+		<label> 아이디 : <input type = "text" size = "30"></label><br> <!-- label : 글자 아이디를 클릭해도 아이디가 활성화됨 -->
+		<label for = "pwd"> 암호 : <input type = "password" size = "30" id = "pwd"></label><br>
+		</fieldset>
+		
+		<br>
+		
+		<fieldset>
+		<legend>희망연봉</legend> <!-- name : 그 안에서 하나만 선택할 수 있음 -->
+		<input type = "radio" name = "salary">2500~2800<br>
+		<input type = "radio" name = "salary">2800~3100<br>
+		<input type = "radio" name = "salary">3100~3600<br>
+		<input type = "radio" name = "salary">3600~4200<br>
+		<input type = "radio" name = "salary">4200~<br>
+		</fieldset>
+		
+		<br>
+		
+		<fieldset>
+		<strong>사용언어 (중복선택 가능)</strong><br>
+		<input type = "checkbox" name = "lang"> JAVA<br>
+		<input type = "checkbox" name = "lang"> C<br>
+		<input type = "checkbox" name = "lang"> C++<br>
+		<input type = "checkbox" name = "lang"> Python<br>
+		<input type = "checkbox" name = "lang"> HTML<br>
+		<input type = "checkbox" name = "lang"> JavaScript<br>
+		</fieldset>
+		
+		<br>
+		
+		<fieldset>
+		<strong>취미</strong><br>
+		<input type = "checkbox" name = "hobby">코딩<br>
+		<input type = "checkbox" name = "hobby">개발<br>
+		<input type = "checkbox" name = "hobby">디버깅<br>
+		</fieldset>
+		
+		<strong>자기소개</strong><br>
+		<textarea rows = "5" cols = "50"
+		>
+		</textarea><br>
+		
+		<strong>첨부파일</strong><br>
+		<input type = "file" size = "50"><br><br>
+		
+		<!-- <input type 말고 button이라는 기능을 통해서도 구현 가능 -->
+		<button>버튼</button>
+		<button type = "reset">초기화</button>
+		<button type = "submit">전송</button>
+
+		
+		
+		<!-- 
+		<input type = "button" value = "버튼"><br>
+		<input type = "reset" value = "초기화"><br>
+		<input type ="submit" value = "전송">
+		-->
+	</form>
+	
+</body>
+</html>

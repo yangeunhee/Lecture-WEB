@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<!-- 외부의 css파일 임포트시킬때 사용되는 태그 : link -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.slider').bxSlider({
+   	mode : 'vertical',
+   	captions : 'true',
+   	slideWidth : 500
+    });
+  });
+</script>
+</head>
+<body>
+<div class="slider">
+  <div><img src = "/Lecture-WEB/jquery/img/dog.jpg" title = "귀여운 강아지"></div>
+  <div><img src = "/Lecture-WEB/jquery/img/dog2.jpg" title = "짱 귀여운 강아지"></div>
+  <div><img src = "/Lecture-WEB/jquery/img/dog3.jpg" title = "너무 귀여운 강아지"></div>
+  <div><img src = "/Lecture-WEB/jquery/img/dog4.jpg" title = "대박 귀여운 강아지"></div>
+</div>
+</body>
+</html>

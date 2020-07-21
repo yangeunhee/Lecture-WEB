@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var nums = [10, 20, 30, 40, 50]
+	
+	/*
+		0번째 변수 : 10
+		1번째 변수 : 20
+		2번째 변수 : 30
+		3번째 변수 : 40
+		4번째 변수 : 50
+	*/
+	
+	// 배열값을 찍어주는 방식
+	document.write('<h2>첫 번째 방식</h2>')
+	for(let i = 0; i < nums.length; i++){
+		document.write(`${i}번째 정수 : ${nums[i]}<br>`)
+	}
+	
+	document.write('<h2>두 번째 방식</h2>')
+	for(let idx in nums){
+		document.write(`${idx}번째 정수 : ${nums[idx]}<br>`)
+	}
+	
+	
+/* 	// nums배열의 요소 갯수 만큼 function을 호출해줘 (33333이 나옴)
+	document.write('<h2>세 번째 방식</h2>')
+	nums.forEach(function(){
+		document.write(arguments.length)
+	}) */
+
+	document.write('<h2>세 번째 방식</h2>')
+	nums.forEach(function(element, index, nums){
+		document.write(`${index}번째 정수 : ${element}<br>`)
+		document.write(nums + "<br>")
+	})
+	
+	
+	/* // 깊은복사 할건데 copyNums배열이 nums에 100 더한걸 하게 해줘
+	var copyNums = []
+	for(let i in nums){
+		copyNums[i] = nums[i] + 100;
+	} */
+	
+	// map : 콜백함수. 리턴값 존재
+	// 깊은복사
+	var copyNums = nums.map(function(element){
+		return element + 100
+	})
+	
+	document.write('nums : ' + nums + "<br>")
+	document.write('copyNums : ' + copyNums + "<br>")
+	
+	
+	
+	
+	
+	
+	//
+/* 	let bool = nums.every(function(element, index, nums){
+		return element % 10 == 0
+	})
+	
+	document.write('every() 결과 : ' + bool + '<br>')
+	
+	//
+	let bool = nums.some(function(element, index, nums){
+		return element % 10 == 0
+	})
+	
+	document.write('some() 결과 : ' + bool + '<br>')
+	 */
+	/*
+	합 구하는 법
+	let s = 0;
+	for(let data of nums){
+		s += data
+	}
+	*/
+	
+	// 
+	let sum = nums.reduce(function(before, element, index){
+		return before + element		
+	})
+	
+	document.write('배열의 총합 : ' + sum + '<br>')
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	input[type]{ /* type = password 타입이 password인것만 */
+		background-color: olive; /* input 태그중에 type이라는 속성을 가진 것들은 olive 색상을 주세요 */
+	}
+	
+	img{
+      width:100px;
+      height:100px;
+      border: 2px solid orange;
+   }
+	
+	/* 가장 마지막에 나온 것이 우선순위가 높다. */
+	img[src $= jpg]{/* $ : ~로 끝난다. */
+		border-color: blue;
+	}
+	
+	img[src ^= "/Lecture-WEB/html/images"]{
+		border-color: red;
+	}
+	
+	img[src *= p]{ /* p가 포함된 파일은 보라색으로*/
+		border-color: purple;
+	}
+	
+</style>
+</head>
+<body>
+	<form>
+		아이디 : <input type = "text"><br>
+		패스워드 : <input type = "password"><br>
+	</form>
+	<br>
+	<img src = '/Lecture-WEB/html/images/pencil.jpg'>
+	<img src = '/Lecture-WEB/html/images/고양이.jpg'>
+	<img src = '/Lecture-WEB/html/images/heart.gif'>
+	
+</body>
+</html>

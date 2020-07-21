@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div {
+		width: 100px;
+		height: 100px;
+		background-color: red;
+		display : none;
+		position : absolute; /* position이 absolute여야 left, top으로 이동 가능 (position의 default값 : static) */
+	} 
+</style>
+<script src = "/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('div').animate({
+			
+			/* width : '200px', // 200px만큼 커지기
+			height : '+=200px'// 원래 있던 크기에서 200px 더 커지기 */
+			
+			width : 'toggle', //css 부분에서의 display가 none이었다가 toggle발생시키면 나타나기
+			height : 'toggle',
+			left : '100px', // 위치
+			top : '50px',	// 위치
+			opacity : '0.2' // 투명도
+			
+		},1000) // 1초에 걸쳐서 점점 길어지기
+	})
+</script>
+</head>
+<body>
+ 	<div></div>
+</body>
+</html>

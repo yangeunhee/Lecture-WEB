@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#div01{
+		background-color: yellow;
+		height : 150px
+	}
+</style>
+<script src = "/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		/*
+			h1태그를 클릭하면 글자 색이 빨간색으로 변하고
+			h1태그에 마우스를 접근시키면 배경을 yellow로 변경하고
+			h1태그에서 마우스가 벗어나면 배경을 다시 흰색으로 변경
+		*/
+		
+		//exam07과 비슷한 유형을 더 쉽게 구현
+		
+		/* $('h1').mouseenter(function(){ // id가 div01인 애한테 마우스가 진입하면
+			//alert("나나")
+			
+			$(this).css('background-color', 'blue') // 파란색
+			})
+			
+		$('h1').mouseleave(function(){ // id가 div01인 애한테서 마우스가 나가면
+			//alert("나나")
+			$(this).css('background-color', 'yellow') // 노란색
+		})
+		
+		$('h1').click(function(){
+			$(this).css('color', 'red')
+		}) */
+		
+		
+		/*
+			위에 모든 것이 h1태그이므로 이를 한번에 처리하는 방법
+		*/
+		
+		$('h1').on({
+			'click' : function(){
+				$(this).css('color','red')
+				$(this).css('background-color','purple')
+				$(this).css({
+					// js객체가 이 안에 들어옴
+					color : 'blue',
+					'backgroundColor': "purple" //background-color에 ''하는 이유 : -이거 때문에 오류날 수도 있음
+				})
+			}, 'mouseenter' : function(){
+				$(this).css('background-color', 'yellow')
+			}, 'mouseleave' : function(){
+				$(this).css('background-color', 'white')
+			}
+		})
+	})
+</script>
+</head>
+<body>
+
+	<div id = "div01">
+		나는 div영역입니다
+		마우스를 접근시켜보세요
+	</div>
+
+	<h1>첫 번째 문장입니다</h1>
+	<h1>두 번째 문장입니다</h1>
+	<div>
+		<h1>세 번째 문장입니다</h1>
+	</div>
+	<h1>네 번째 문장입니다</h1>
+	<button>클릭</button>
+</body>
+</html>

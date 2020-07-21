@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width : 100px;
+		height : 100px;
+		float : left;
+		line-height : 100px;
+		text-align : center;
+	}
+	
+	#mon{
+		background-color : red;
+	}
+	#tue{
+		background-color : orange;
+	}
+	#wed{
+		background-color : yellow;
+	}
+	#thu{
+		background-color : green;
+	}
+	#fri{
+		background-color : blue;
+	}
+	#sat{
+		background-color : Indigo;
+	}
+	#sun{
+		background-color : purple;
+	}
+</style>
+<script src = "/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		 $('div').on({
+			 'mouseenter' : function(){
+				 $(this).animate({
+					 'width' : '150px',
+					 'height' : '200px'
+				 }, function(){
+					 $(this).text(function(){
+						return this.textContent +"요일"
+					 });
+				 })
+			 }, 'mouseleave' : function(){
+				 $(this).animate({
+					 'width' : '100px',
+					 'height' : '100px'
+				 }, function(){
+					 $(this).text(function(){
+						return this.textContent[0] 
+					 })
+				 })
+			 }
+		 })
+		})
+</script>
+</head>
+<body>
+	<div id = "mon">월</div>
+	<div id = "tue">화</div>
+	<div id = "wed">수</div>
+	<div id = "thu">목</div>
+	<div id = "fri">금</div>
+	<div id = "sat">토</div>
+	<div id = "sun">일</div>
+</body>
+</html>

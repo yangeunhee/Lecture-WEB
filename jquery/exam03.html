@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		alert('ready')
+		
+		//$('ul li').hide() // ul태그 후손들중에 li태그들은 전부 다 / $('div > h1') : div태그의 바로 아래 자식중 h1 / $('div h1') : div태그의 모든 자식들 중 h1
+		//$('ul li:last').hide() // ul태그의 후손들중에  li태그중에 마지막값을 지움 (튀김만 지워짐)
+		//$('ul li:first').hide() // ul태그의 후손들중에  li태그중에 첫번째값을 지움 (호랑이만 지워짐)
+		//$('ul li:first-child').hide() // ul태그의 후손들중에 li태그를 가진 모든 것들의 첫번째 자식을 지움
+		//$('ul li:last-child').hide() // ul태그의 후손들중에 li태그를 가진 모든것들의 마지막 자식을 지움
+		
+	})
+	</script>
+</head>
+<body>
+	<h1>동물종류</h1>
+	<ul>
+		<li>호랑이</li>
+		<li>사자</li>
+		<li>코끼리</li>
+		<li>곰</li>
+	</ul>
+	
+	<h1>음식종류</h1>
+	<ul>
+		<li>떡볶이</li>
+		<li>순대</li>
+		<li>돈까스</li>
+		<li>튀김</li>
+	</ul>
+</body>
+</html>

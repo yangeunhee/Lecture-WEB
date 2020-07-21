@@ -1,0 +1,44 @@
+<!-- 
+	<원시자료형>
+	Number
+	String
+	Boolean
+	Undefined
+	Null
+	
+	Object
+	
+	Symbol
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/* java script는 동적인 형태로 타입매치가 이뤄지기 떄문에 var형으로 선언하고  대입되는 순간 변수의 타입이 알아서 설정됨(느슨한 결합)*/
+	var a = 10;
+	var b = "Hello";
+	c = 12.34; /* var를 선언하지 않고도 타입이 저절로 매치됨 */
+	
+	var d; /* 변수를 만들어놓고 초기화 하지 않은 상태의 타입 : undefined */
+	
+	/* type 확인 */	
+	alert(typeof a.toString) /* Number타입 -> String타입 변경시켜줌 */
+	alert(typeof Number('123')); /* Number */
+	alert(typeof '123'); /* string */
+	alert(typeof Boolean(false)); /* boolean형 */
+	alert(typeof "A"); /* java script에선 ",'의 차이가 없음 (호환가능) 둘다 string으로 인식*/
+	alert(typeof d); /* undefined */
+	alert(typeof null); /* null : 객체가 생성이 되었지만 가르킬 객체가 없는 것 (object라고 출력됨) */
+	alert(typeof undefined); /* undefined라는 타입이 있음 */
+	alert(typeof true);
+	alert(typeof a); /* a라는 변수의 자료형을 출력하라 */
+	alert(typeof b);
+	alert(typeof c);
+</script>
+</head>
+<body>
+
+</body>
+</html>

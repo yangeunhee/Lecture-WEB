@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+   #ancester *{
+      border: 1px solid pink;
+      display: block;
+      padding:10px;
+      margin:10px;
+   }
+   
+   .blue{
+      border-color:blue;
+   }
+</style>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+   $(document).ready(function(){
+     // $('span').parent().css('border-color', 'blue') // span 태그의 부모에게 적용
+     // $('span').parents().css('border-color', 'blue') // span 태그의 모든 부모 body, html 다적용됨
+     // $('span').parents('div').css('border-color', 'blue') // div에게만
+     // $('span').parentsUntil('div').css('border-color', 'blue') // div전까지 적용
+      
+     // $('#ancester').children('#div02').css('border-color', 'blue') // #ancester의 자식은 div1, div2 두 개
+     // $('#ancester').find('ul').css('border-color', 'blue') // find는 후손들 중에서 ('태그')값을 찾는다
+     // $('#ancester').find('*').css('border-color', 'blue') // wildcard 전체가 나옴
+      $('#ancester *').filter('ul').css('border-color', 'blue') //범위가 ('#ancester')로 국한됨 : 이 태그 안에서 div라는 태그를 찾겠다 // = $('#ancester').find('ul').css('border-color', 'blue')  
+   })
+</script>
+</head>
+<body>
+   <div id="ancester">
+      <div id="div01"> div01
+         <ul>ul
+            <li>li
+               <span>span</span>
+            </li>
+         </ul>
+      </div>
+      <div id="div02"> div02
+         <p>p
+            <span>span</span>
+         </p>
+      </div>
+   </div>
+
+</body>
+</html>

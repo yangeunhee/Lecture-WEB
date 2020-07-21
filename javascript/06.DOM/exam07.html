@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*
+		이벤트 버블링 -> 자기의 상위까지 이벤트가 먹히는것
+	 */
+	window.onload = function() {
+
+		var span = document.querySelector('span') // querySelector를 통해 span태그를 가진 것들을 갖고옴
+		var h1 = document.querySelector('h1')
+		var div = document.querySelector('div')
+
+		span.onclick = function(e) {
+			alert('click span')
+		}
+		
+		h1.onclick = function(e) {
+			alert('click h1')
+			
+			e.cancelBubble = true // 버블링을 멈추겠다.
+			console.log(e)
+		}
+		
+		div.onclick = function() {
+			alert('click div')
+		}
+	}
+</script>
+</head>
+<body>
+	<div>
+		<h1>
+			<span>Hello</span>
+		</h1>
+	</div>
+
+</body>
+</html>

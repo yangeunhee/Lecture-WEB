@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img {
+		width :150px;
+		height : 120px;
+		float : left; 
+	}
+	button {
+		float : left;
+		height : 120px;
+	}
+</style>
+<script src = "/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#nextBtn').click(function(){
+			$('img').last().prependTo('span')
+		})
+		 $('#prevBtn').click(function(){
+			$('img').first().appendTo('span')
+		})
+		setInterval(function() {
+			$('#nextBtn').trigger('click')
+		}, 5000) 
+	})
+</script>
+</head>
+<body>
+	<button id = "prevBtn">PREV</button>
+		<span>
+		<img src = "/Lecture-WEB/jquery/img/dog.jpg">
+		<img src = "/Lecture-WEB/jquery/img/dog2.jpg">
+		<img src = "/Lecture-WEB/jquery/img/dog3.jpg">
+		<img src = "/Lecture-WEB/jquery/img/dog4.jpg">
+		</span>
+	<button id = "nextBtn">NEXT</button>
+</body>
+</html>

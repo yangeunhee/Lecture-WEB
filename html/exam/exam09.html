@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>우리분식 메뉴</h2>
+	
+	<select> <!-- n개 중에 하나 선택 -->
+	<!-- <select size = "3"> --> <!-- 한 번에 3개씩 보여줌 -->
+		<option> 떡볶이 </option>
+		<option> 순대 </option>
+		<option selected = "selected"> 라면 </option> <!-- 속성명과 속성값이 같을 땐 selected만 써도 됨 -->
+		<option> 튀김 </option>
+		<option> 쫄면 </option>		 
+	</select>
+	
+	<hr>
+	
+	<select multiple> <!-- ctrl키 눌러서 여러개 선택 가능 -->
+		<option> 떡볶이 </option>
+		<option> 순대 </option>
+		<option> 라면 </option>
+		<option> 튀김 </option>
+		<option> 쫄면 </option>		 
+	</select>
+	
+	<hr>
+	
+	<select>
+	<optgroup label="분식류">
+		<option> 떡볶이 </option>
+		<option> 순대 </option>
+		<option> 라면 </option>
+		<option> 튀김 </option>
+		<option> 쫄면 </option>
+	</optgroup>
+	
+	
+	<optgroup label="식사">
+		<option> 돈까스 </option>
+		<option> 김밥 </option>
+		<option> 김치볶음밥 </option>
+		<option> 비빔밥 </option>
+		<option> 김치찌개 </option>
+	</optgroup>
+	</select>
+	
+	<hr>
+	<input list = "food01"> <!-- 여기를 foods02로 바꿔주면 아래꺼가 나옴 -->
+	<datalist id = "food01">
+		<option> 떡볶이 </option>
+		<option> 순대 </option>
+		<option> 라면 </option>
+		<option> 튀김 </option>
+		<option> 쫄면 </option>
+	</datalist>
+	
+	<datalist id = "food02">
+		<option> 돈까스 </option>
+		<option> 김밥 </option>
+		<option> 김치볶음밥 </option>
+		<option> 비빔밥 </option>
+		<option> 김치찌개 </option>
+	</datalist>
+	
+</body>
+</html>

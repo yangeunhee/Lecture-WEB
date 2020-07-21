@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*
+		js에서도 css의 id속성을 사용할 수 있게 함	
+	*/
+	
+	window.onload = function(){
+		//var id = document.getElementById("id") //document안에서 id가 id인 것에 해당하는 태그에 접근 (한 개) / querySelector()와 동일
+		var id = document.querySelector('#id') // id가 id인 것에 해당하는 객체를 찾겠다
+		
+			console.log(id) // id가 id인 애를 콘솔창에 띄움
+			id.innerHTML = "아이디"	//id가 id인 애의 ID라는 값을 한글 아이디로 변경		
+			
+			var password = document.querySelector('.pwd')
+			console.log(password)	// id가 password인 애를 찾아서 콘솔창에 띄움
+			password.innerText = '패스워드'
+		
+	}
+</script>
+</head>
+<body>
+	<table border = "1" style = "width : 100px; height : 100px">
+		<tr>
+			<td id = "id">ID</td>
+		</tr>
+		<tr>
+			<td class = "pwd">PASSWORD</td>
+		</tr>
+	</table>
+
+</body>
+</html>

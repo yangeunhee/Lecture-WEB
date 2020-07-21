@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var input = prompt("369 게임을 시작합니다. 10-100사이의 숫자를 입력하시오")
+	
+		for (var i = 1; i <= input; i++) {
+				if(i%10 === 3 || i%10 === 6 || i%10 === 9) {
+					i++;
+					alert("짝");
+					}
+				}if(i/10 === 3 || i/10 === 6 || i/10 ===9){
+					if(i/10 === 3){
+						i++;
+						alert("짝뽀뽀뽀숑");
+					} if(i/10 === 6){
+						alert("짝뽀뽀뽀뽀뽀뽀숑");
+					} if(i/10 === 9){
+						alert("짝뽀뽀뽀뽀뽀뽀뽀뽀뽀숑");
+					}
+				}
+				if (i === 10) {
+					i++;
+					alert("뽀숑");
+				}if (i === 20) {
+					i++;
+					alert("뽀뽀숑");
+				}if (i === 40) {
+					i++;
+					alert("뽀뽀뽀뽀숑");
+				}if (i === 50) {
+					i++;
+					alert("뽀뽀뽀뽀뽀숑");
+				}if (i === 70) {
+					i++;
+					alert("뽀뽀뽀뽀뽀뽀뽀숑");
+				}if (i === 80) {
+					i++;
+					alert("뽀뽀뽀뽀뽀뽀뽀뽀숑");
+				}if (i === 100) {
+					i++;
+					alert("뽀뽀뽀뽀뽀뽀뽀뽀뽀뽀숑");
+				}else{
+			alert(i);
+			}
+		}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- HTML5이전 embed : <embed src = "images/Wildlife.wmv"> -->
+	<br>
+	HTML5이전 embed : <embed src = "images/Kalimba.mp3">
+	<br>
+	
+	HTML 버전 : <br>
+	<audio src = "images/Kalimba.mp3" controls autoplay="autoplay"></audio> <!-- controls가 없으면 audio는 아무것도 실행하지 않음, autoplay : 자동실행 -->
+	<hr>
+	
+	<h3> HTML 이전버전 : embed tag 이용</h3>
+	<embed src = "images/movie.mp4">
+	
+	<h3>HTML 이전버전 : object tag 이용</h3>
+	<object data = "images/movie.mp4"></object>
+	
+	<h3>HTML5 버전 : video tag 이용</h3>
+	<video src="images/movie.mp4" controls="controls" width="640" height = "480"></video>
+	<video controls="controls" width="640" height = "480"><source src = "images/movie.mp4"></video>
+
+	<hr>
+	<h3>YOUTUBE 양상 삽입</h3> <!--iframe 태그를 이용해야만 가능 (공유 -> 동영상퍼가기 링크 복사), 이거로 pdf파일도 가져올 수 있음 -->
+	<iframe width="560" height="315" 
+	src="https://www.youtube.com/embed/yhXT3hBaDoU" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen></iframe>
+	
+	<hr>
+	<canvas width ="600" height = "600" style = "border : 5px dotted red"></canvas>
+	
+</body>
+</html>

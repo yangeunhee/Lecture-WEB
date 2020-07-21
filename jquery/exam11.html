@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div {
+		width: 100px;
+		height: 100px;
+		background-color: red;
+	} 
+</style>
+<script src = "/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		/*  $('div').css({
+			width : '100px',
+			height : '100px',
+			'background-color' : 'red'
+		})  */
+		
+		$('div').hide(1000) // 1초에 걸쳐서 사라졌다
+		$('div').show(1000) // 1초에 걸쳐서 나타나기
+		
+		$('div').toggle(1000) // show와 hide를 번갈아가면서 보이게함 (현재 상태가 show면 hide, hide면 show)
+		$('div').toggle(1000)
+		
+		$('div').fadeOut(1000) // 1초에 걸쳐서 사라졌다
+		$('div').fadeIn(1000) // 1초에 걸쳐서 나타나기
+		
+		$('div').fadeToggle(1000) // fade를 toggle하는 것
+		$('div').fadeToggle(1000)
+		
+		$('div').fadeTo(1000,0.5) // 1초에 걸쳐서 투명도 0.5
+		
+	})
+	
+	/*
+		상자 만드는 방법
+	 	1. inline style
+	 	2. embed 방식의 css
+	 	3. ready 상태에서 div에 css설정
+	*/
+	
+</script>
+</head>
+<body>
+	<!--1번 방식
+	<div style = "width : 100px; height : 100px; background-color: red;"></div>
+ 	-->
+ 	<div></div>
+</body>
+</html>

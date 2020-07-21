@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+   function Person(name, phone, addr){      
+      
+      this.name = name;
+      this.phone = phone;
+      this.addr = addr;      
+   }
+   
+   Person.prototype.hobby = '잠자기'
+   
+//   prototype에 변수도 정의할 수 있다
+//   Person.prototype.hobby = '숨쉬기'
+   
+   Person.prototype.info = function(){
+      var msg = '';
+      for(let key in this){
+         if((typeof this[key] != 'function'))
+            msg += key + ' : ' + this[key] + "<br>"
+      }
+      document.write(msg)
+      
+   }
+   
+   function Doctor(name, phone, addr, major){
+      
+      //super는 변수명 - 저 함수 쓰려면 super() 이렇게 쓰면 되겟지
+      this.super = Person;         //this.super = function(){ this }와 동일 - this는 doctor
+      this.super(name, phone, addr)
+      
+      
+//      Person.call(this, ...arguments)
+//      Person.apply(this, arguments)
+//      Person.call(this, name, phone, addr)         //this가 doctor꺼임을 알려주는것 - 반드시 써줘야함
+      this.major = major
+   }
+   
+   
+   Doctor.prototype = Person.prototype; // Doctor의 prototype이 Person의 prototype을 갖게 (이렇게 프로토타입을 설정해서 서로 상속인것처럼 인지하게 만들 수 있음)
+   
+   let person = new Person('홍길동', '010-1111-2222', '경기도 광명시')
+   person.info() 
+   
+   let doctor = new Doctor('윤다영', '010-1111-9999', '서울시 서초구 서초동', '정형외과')
+   console.log(doctor)
+   
+   document.write('person instanceof Person : ' + (person instanceof Person) + "<br>")
+   document.write('doctor instanceof Doctor : ' + (doctor instanceof Doctor) + "<br>")
+   document.write('doctor instanceof Person : ' + (doctor instanceof Person) + "<br>")
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

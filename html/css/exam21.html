@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+	div{
+		width: 100px;
+		height: 100px;
+		background-color: red;
+		transition-property: background-color, border-radius;
+		transition-duration: 3s; /*3초 뒤에 색이 바뀜*/
+		transition-timing-function: ease; /* 원이 바뀌는 시간과 색이 바뀌는 시간이 동일 */
+		transition-delay: 2s;
+		}
+	
+	div:hover{
+	background-color: blue;
+	border-radius: 50%;
+	}
+	</style>
+
+</head>
+<body>
+	<div>
+		사각형
+	</div>
+	
+</body>
+</html>

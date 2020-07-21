@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var dict = [ "rainbow", "banana", "boat", "apple", "icecream" ];
+
+	var num = Math.floor(Math.random() * 5); // 0~4까지 숫자 랜덤
+	var choice = dict[num]; // 단어 고름
+	var word = choice.split(""); // 고른 단어 하나하나 배열에 넣음
+	var answer = []; // 사용자가 적은 글자를 기억하는것
+
+	for (var k = 0; k < word.length; k++) {
+		answer[k] = "*"
+	}
+	
+	alert(answer)	// *을 넣어서 보여줌
+	
+	for (var j = 0; j < 10; j++) {
+		var input = prompt("단어를 하나 입력하세요.");
+		for (var i = 0; i < word.length; i++) {
+			if (input === choice[i]) {
+				answer[i] = input;
+				j--; // 단어 맞추면 횟수 줄어들지 않음
+			}
+		}
+		alert(answer)
+		var ok = prompt("정답을 아시겠습니까? Y/N")
+		if (ok === "Y") {
+			var go = prompt("정답을 입력하세요")
+			if (go === choice) {
+				alert("정답입니다~~~")
+				break;
+			}alert("오답입니다")
+		}
+	if(j===10)
+	alert("총 10번의 기회를 모두 소진하였습니다.")
+	}
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

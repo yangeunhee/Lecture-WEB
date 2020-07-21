@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*
+		자바 스크립트 내장함수
+		1. 타이머
+			setTimeout(함수, ms) : 일정시간(ms)이 지나면 어떤 행동(함수)을 하게함 (callback함수)
+			setInterval(함수, ms) : ms가 경과할 때 마다 함수실행
+			clearInterval(id) : setInterval함수를 중지시키고 싶을 때
+			clearTimeout(id) : setTimeout함수를 중지시키고 싶을 때
+			
+		2. 코드 실행함수
+			eval(str) : str은 문자열. 문자열이 만약 js의 코드라면 그 문자열을 실행하게 해줌
+			
+		3. 숫자 변환함수
+			parseInt(str)
+			parseFloat(str1)
+			
+	*/
+	
+	//callback함수
+	/* var func = function(){
+				alert("3초 지났습니다.");
+			}
+	setTimeout(func, 3000); 
+	
+	아래와 표기만 다르지 같음
+	*/
+	var id = setInterval(function(){
+				//alert("1초가 지났습니다.");
+				document.write("현재시간 : " + new Date() + "<br>");
+			}, 1000);
+	
+	// 10초가 지나면 setInterval종료
+	setTimeout(function(){
+		alert("날짜쓰기 종료");
+		clearInterval(id);
+	},10000);
+</script>
+</head>
+<body>
+
+</body>
+</html>

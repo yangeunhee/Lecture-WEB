@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	/*
+		JSON
+		JSON.stringify() : 자바 스크립트 객체 값을 문자열로 변환시켜주는 함수
+		JSON.parse() : 자바스크립트 문자를 객체로 변환시켜주는 함수
+	*/
+
+	let person = {
+			'name' : '홍길동',
+			'phone' : '010-1111-2222',
+			'addr' : '서울시 서초구',
+			toJSON : function(){ // toJSON을 할 때 내가 원하는 값만 넘겨주겠다. 이 함수가 정의되어있지 않으면 모든 속성값을 리턴
+				return {
+					"name" : this.name,
+					"addr" : this.addr
+				}
+			}
+		}
+	
+	// console.log(person)
+	// console.log(JSON.stringify(person), typeof JSON.stringify(person)) // JSON.stringify()한 것은 타입이 string임을 알 수 있다
+	
+	let strPerson = JSON.stringify(person)
+	// strPerson이 가지고 있는 것이 문자인데 이걸 다시 객체로 인식하고싶으면? -> JSON.parse()
+	console.log(strPerson)
+	console.log(typeof strPerson)
+	
+	let obj = JSON.parse(strPerson)
+		console.log(obj)
+		console.log(typeof (obj))
+		
+		document.write('name : '+obj.name+"<br>")
+		document.write('phone : '+obj.phone+"<br>")
+		document.write('addr : '+obj.addr+"<br>")
+		
+		
+	let str = '{"id" : "hong", "password" : "1234"}'
+   	   let obj2 = JSON.parse(str)
+	   console.log(obj2)
+	   
+	   document.write('<hr>')
+	   document.write('id : ' + obj2.id + ", password : " + obj2.password + '<br>')
+
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

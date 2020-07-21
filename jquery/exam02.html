@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		alert("ready")
+		// $(선택자) : 태그 선택
+		// $('h1').hide() // hide() : jquery의 함수로 해당하는 선택자의 태그의 디스플레이를 none으로 바꿈 (여기선 h1태그를 가진 것들이 선택자)	// document.getElementsByTagName('h1')[0].style.display='block'을 하면 0번지에 있는 Hello가 다시 나옴
+		
+		/*	$('h1').hide()와 같은 의미인데 hide() 함수 한 줄로 간단하게 구현할 수 있다
+		let h1Tags = document.getElementsByTagName('h1')
+		for(var i in h1Tags) {
+			h1Tags[i].style.display = 'none'
+		}
+		*/
+		
+		/* $('#h01').hide(); // id가 h01인 것이 지워짐
+		$('.h02').hide(); */ // class가 h02인 것이 지워짐
+		//$('h1.h02').hide(); // h1태그중 class가 h02인 값이 지워짐
+		// $('body > *').hide(); // body밑에 있는거 싹 지워짐
+		$('h1:first').hide(); // h1 속성을 가진 것 중 첫 번째가 지워짐
+		$('h1:last').hide(); // h1 속성을 가진 것 중 마지막이 지워짐
+	})
+</script>
+</head>
+<body>
+	<hr>
+	<h1 id = "h01">Hello</h1>
+	<h1 id = "h02">Hi</h1>
+	<h2 class = "h02">good-bye</h2>
+	<hr>
+	<h1 class = "h01">Hello</h1>
+	<h1 class = "h02">Hi</h1>
+
+</body>
+</html>

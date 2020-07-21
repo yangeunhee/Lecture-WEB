@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	// 문자배열
+	// var books = ['신데렐라', '콩쥐팥쥐', '피터팬', '백설공주']
+	var books = new Array();
+	
+	// 배열에 순서대로 값을 넣는 함수
+	books.push('신데렐라')
+	books.push('콩쥐팥쥐')
+	books.push('피터팬')
+	books.push('백설공주')
+	
+	for(let element of books){
+		document.write(element + '&nbsp;&nbsp;&nbsp;')
+	}
+	document.write('<hr>')
+	
+	// ㄱ,ㄴ,ㄷ 순으로 정렬
+	books.sort()
+	
+	for(let element of books){
+		document.write(element + '&nbsp;&nbsp;&nbsp;')
+	}
+	document.write('<hr>')
+	
+	// 숫자배열
+	var nums = [12, 5, 357, 85, 56, 8, 21]
+	document.write(nums + "<hr>")
+	
+	// 오름차순 정렬 (문자열로 인식)
+	nums.sort()
+	document.write(nums + "<hr>")
+	
+	// 숫자를 문자열로 인식해서 정렬 / 숫자 두개빼서 작으면 리턴 (left - right = 오름차순)
+	nums.sort(function (left, right){
+		return left - right;
+	})
+	document.write(nums + "<hr>")
+	
+	// 내림차순 정리
+	nums.sort(function (left, right){
+		return right - left;
+	})
+	document.write(nums + "<hr>")
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

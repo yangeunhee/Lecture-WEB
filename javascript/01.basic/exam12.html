@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*
+		이름을 입력하세요 : 홍길동
+		나이를 입력하세요 : 28
+		홍길동의 10년후의 나이는 38세입니다.
+		1번째 입력되었습니다
+		계속하시겠습니까? <- Yes
+				
+		이름을 입력하세요 : 홍길순
+		나이를 입력하세요 : 22
+		홍길순의 10년후의 나이는 32세입니다.
+		2번째 입력되었습니다.
+		계속하시겠습니까? <- no
+	 */
+	 /*
+	 let cnt = 0;
+	while (true) {
+		let name = prompt("이름을 입력하세요");
+		let age = prompt("나이를 입력하세요"); // string으로 인식
+
+		age = Number(age);
+		
+		alert(name + "의 10년 후 나이는 " + (age + 10) + "세 입니다.")
+		alert(++cnt +"번 수행되었습니다.");
+		var input = confirm("계속 하시겠습니까?");
+		if (input == false) {
+			break;
+		}
+	}*/
+	
+	// 어떤 행동을 한 번 한 다음에 또 할까 물어볼 때 do-while
+		let cnt = 0;
+	do {
+		let name = prompt("이름을 입력하세요");
+		let age = prompt("나이를 입력하세요"); // string으로 인식
+
+		age = Number(age);
+		
+		alert(name + "의 10년 후 나이는 " + (age + 10) + "세 입니다.");
+		alert(++cnt + "번 수행되었습니다.");
+	}while(confirm("계혹하시겠습니까?")); // confirm으로 확인받고 취소 누르면 끝내고 확인 누르면 계속함
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

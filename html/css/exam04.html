@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+	div {
+		position : absolute; /* 고정된 위치(left top)를 기준으로 left top, right bottom의 결과를 나타내겠다 (겹치게됨, 덮어쓰기) */
+		left : 50px
+		background-color: red;
+		width : 100px;
+		height : 100px;
+	}
+	
+	.div01 {
+		left : 50px;
+		background-color: red;
+		/* z-index : 1; 이게 디폴트값임 그래서 지금 이게 아래에 가려져서 2번째 사각형밖에 안나옴 , 근데 이게 위로 보이게 하고싶으면 z-index : 2로 하면 됨*/
+	}
+	
+	.div02{
+		top : 50px;
+		background-color: blue;
+		/* z-index : 2; 이게 디폴트값임 그래서 두 번째 사각형이 위에 보임. */
+	}
+	
+	.div03{
+		width : 200px;
+		height : 200px;
+		left : 200px;
+		top : 200px;
+		background-color : gray;
+	}
+
+</style>
+
+</head>
+<body>
+
+	<div class = "div01">첫번째 사각형</div>
+	<div class = "div02">두번째 사각형</div>
+	<div class = "div03">세번째 사각형
+		<div class = "div01"></div>	<!-- 내 부모가 있는 위치를 기준으로 움직임 -->
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- <style type = "text/css"> 이 태그 자체가 css만 적용 가능하기 때문에 생략해도딤-->
+<style>
+
+	p {
+		/* color : green;*/
+		/*color : rgb(0, 255, 0);*/
+		color : #00FF00;
+		background-color : gray;
+	}
+	
+	h2 {
+		color : blue /* 속성이 하나면 ; 생략하는 것이 원래 문법 */
+	}
+	
+</style>
+
+</head>
+<body>
+	<!--
+	*css적용하는 방법*
+	1. 직접 지정 (inline 방식) -> 이거 권장사항 아님
+	2. head 부분에 따로 지정 (일반적으로는 head가 끝나기 전에 css, javascript 구성)
+	-->
+	<p>
+		Hello World
+	</p>
+	
+	<p style = "color : blue; background-color: red"> <!-- body 쪽에서 적용된것이 우선이다. -->
+	Hello World
+	</p>
+	
+	<h2>Hello World</h2>
+	
+</body>
+</html>

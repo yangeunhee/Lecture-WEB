@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var num = 10;
+	var num2 = new Number(11);
+
+	document.write('num : ' + num + " : " + (typeof num) + '<br>')
+	document.write('num2 : ' + num2 +" : " + (typeof num2) + '<br>')
+	
+	Object.prototype.info = function(){
+		alert(this)
+	}
+	
+	num.info();
+	num2.info();
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	// js는 ;를 생략할 수 있음. 하지만 return문을 호출할 땐 조심해야한다. 왜냐면 return 하고 {를 다음 줄에 삽입하면 return;로 인식하기 때문
+	
+	function func(a, b, c){
+		document.write(`${a} : ${b} : ${c}<br>`);
+		}
+	function func01(){
+		document.write(arguments[0] + " : "+arguments[1] + " : " + arguments[2] + "<br>");
+	}
+	
+	function func02(){
+		for(let i of arguments){
+			document.write(i + ":");
+			}
+		document.write("<br>");
+		}
+	
+	function func03(...numbers){
+		//console.log(numbers);
+		document.write(numbers + "<br>");
+	}
+	
+	function func04(a, b, ...numbers){
+		document.write('a : ' + a + "<br>");
+		document.write('b : ' + b + "<br>");
+		document.write('numbers : ' + numbers + "<br>");
+	}
+	
+	var array = [1, 2, 3];
+	
+	func01(array); //1,2,3 : undefined : undefined
+	func(array[0], array[1], array[2]); // 1 : 2 : 3
+	func.apply(null, array); // 1 : 2 : 3 // func이라는 함수를 호출해라 함수명.apply() // 함수와 매개변수를 1:1 매칭
+	func(...array); //1 : 2 : 3
+	func03(...array); //1,2,3 // 숫자 3개 날아가고 그걸 numbers로 받겠다.
+	func04(...array); // a : 1	b : 2	numbers : 3 //array에 있는 3개의 값 날아감(numbers는 숫자 3이 하나 들어있는 배열)
+	func04(...array, ...array); //a : 1	b : 2	numbers : 3,1,2,3
+	
+	func03(10, 20, 30); //10,20,30
+	func02(10, 20); //10:20:
+	func02(10, 20, 30); //10:20:30:
+	
+	func01(10, 20); //10 : 20 : undefined
+	func01(10, 20, 30); //10 : 20 : 30
+</script>
+</head>
+<body>
+
+</body>
+</html>

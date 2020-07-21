@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	/* 논리연산자는 교환법칙 성립 안함 */
+	true && alert('출력이 됩니까?'); // 앞이 true, 뒤에 확인
+	false && alert('false일 때 출력이 됩니까?'); // 앞이 false니까 무조건 안나옴
+	alert('false일 때 출력이 됩니까?2') && false; // 앞이 true니까 뒤에 확인
+	
+	true || alert("||출력이 됩니까?"); // 앞이 true니까 뒤엔 실행 X
+	false || alert('||false일 때 출력이 됩니까?'); // 앞이 false니까 뒤에 실행해봐야함
+</script>
+</head>
+<body>
+
+</body>
+</html>

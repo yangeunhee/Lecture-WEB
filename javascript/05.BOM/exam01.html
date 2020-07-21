@@ -1,0 +1,39 @@
+by<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*
+		브라우저 객체 모델(BOM)
+		- window 객체
+			- location 객체 (url주소와 관련된 객체)
+			- navigator 객체 (웹브라우저와 관련(접속한 것이 모바일인가, pc인가, 크롬인가, 사파리인가 등등에 대한 정보를 얻는 것))
+			- history 객체 (앞으로 뒤로 화면 이동할 수 있는 것. 기록용)
+			- screen 객체 (웹브라우저 창과 관련된 객체 (가로세로 정보))
+			- document 객체 (html문서와 관련된 문서 객체, 웹브라우저를 띄울 때 화면 문서에 접근하는 객체)
+			/////////////////////////////////////////
+		- 함수
+			open("url","창의 이름","속성 및 속성값") : 팝업창 띄워주는 함수
+			moveTo(,) : 윈도우의 크기를 기준으로 해서 이동하는 위치
+			sort() : 문자열에 대한 정렬 (정수에 대한 것은 콜백함수를 적용시켜야함)
+	*/
+	//a=10;
+	//alert(a)
+	let sub = open("http://www.naver.com","네이버","width = 400, height = 300")
+	//alert(sub)
+	if(!sub){
+		alert("팝업창 옵션을 확인하세요")
+	}
+	
+	sub.moveTo(100, 100)
+	
+	setInterval(function(){
+		sub.moveBy(20,20) // 현재 위치에서 20by 20으로 움직임(상대적인 위치)
+	},1000)
+</script>
+</head>
+<body>
+
+</body>
+</html>

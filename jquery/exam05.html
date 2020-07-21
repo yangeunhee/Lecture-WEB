@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> <!-- cdm 방식으로 jquery가지고오기 -->
+<script>
+	$(document).ready(function(){
+		alert('ready')
+		/*
+			:은 input태그와 button태그 속성에서만 유효
+		*/
+		//$('input:text').hide() // input 태그중에 type이 text인 것을 지워
+		//$('input:button').hide() // input 태그중에 type이 button인 것을 지워
+		//$(':button').hide() // 어차피 button태그는 input태그에만 있음 (input 생략 가능) -> 근데 이렇게 하면 버튼2까지 지워짐  왜? 사실 버튼2는 <button type = "button">임
+		//$('button').hide() // 태그명이 button인 것만 지우겠다 (버튼 2만 사라짐)
+		
+		$(':button').click(function(){	// type이 button인 것들에서 클릭이 발생하면 콜백함수를 호출하라
+			$('hr').hide() // hr태그를 지워줘
+			$(this).hide("drop", { direction: "up" }) // 클릭한 버튼을 지워줘, 윗방향으로 사라지게
+		}) 
+	})
+</script>
+</head>
+<body>
+		<!-- 
+		button 만드는 방법
+		1. <input type = "button" value = "버튼">
+		2. <button></button>
+		-->
+	<hr>
+	<input type = "text">
+	<input type = "button" value = "버튼1">
+	<button>버튼2</button>
+</body>
+</html>

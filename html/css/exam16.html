@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#number_list li {
+		float: left;
+		margin: 0px 20px 0px 10px;/* t, r, b, l순 무조건 top에서부터 오른쪽 방향으로 움직임 */
+		font-size : 16pt;
+		list-style: none;
+		/*list-style-image: url ('/Lecture/html/images/고양이.jpg');*/
+	}
+	
+	li:first-child {
+		color: orange;
+	}
+	
+	li:last-child {
+		color:blue;
+		}
+	
+	li:nth-child(2n){
+		color: green;		
+		}
+		
+	a{
+		margin: 20px;
+	}
+	
+	p{
+		clear: both; /* 맨 처음에 li에서 지정해준 float left든 right든 이거에 관한 속성을 무효화시키고싶어 */
+	}
+	
+	a:link { /* a태그중 링크를 가진 것, a[href] : a태그 중 href를 가진것 */
+		color: lime;
+		text-decoration: line-through;
+	}
+	
+	a:visited {
+		color: lime;
+	}
+	
+	a:hover { /* 마우스를 가져다 댄 순간 상자 색이 바뀜 */
+		background-color: lightgray;
+	}
+	
+	:root { /* 전체 모든 태그에 적용 */
+		font-weight: bold;
+	}
+}
+</style>
+</head>
+<body>
+	<ul id = "number_list">
+	<li>ONE</li>
+	<li>TWO</li>
+	<li>THREE</li>
+	<li>FOUR</li>
+	<li>FIVE</li>
+	<li>SIX</li>
+	<li>SEVEN</li>
+	<li>EIGHT</li>
+	<li>NINE</li>
+	<li>TEN</li>
+	</ul>
+	
+	<p>
+		<a href = "http://www.naver.com">Naver</a>
+		<a href = "http://www.daum.net">Daum</a>
+	</p>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/*
+					body
+				_____|_____
+				|		  |
+			   h1	  a[href, target]
+				|		  |
+			 "Hello"   img[src]
+		
+		*/
+	/*
+	  createElement : 요소를 만드는 것
+	 */
+	window.onload = function() {
+		let tag = document.createElement('h1') // h1이라는 이름으로 태그를 만들겠다
+		let tagText = document.createTextNode("Hello") //tagText값으로 Hello를 생성
+		/* console.log(tag)
+		console.log(tagText) */
+		tag.appendChild(tagText) //tag 속성의 의 자식으로 tagText값을 집어넣음
+		document.body.appendChild(tag) // 그걸 body에 출력
+		
+		let imgTag = document.createElement('img')	//img태그 만들기 (이걸 body의 자식으로 넣고싶다)
+		imgTag.src = "https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png" // src속성으로 이미지 링크를 넣어줌
+/* 		console.log(imgTag)
+		document.body.appendChild(imgTag) // body에 출력 */
+		
+		let aTag = document.createElement('a') // a태그를 생성해줌
+		//aTag.href = 'http://www.daum.net' // aTag에 href속성에 사이트로 연결하는 값을 넣어줌 (이 방법 말고 아래 방법도 있음)
+		aTag.setAttribute('href', 'http://www.daum.net')
+		aTag.setAttribute('target', '_blank')
+		aTag.appendChild(imgTag) // a태그의 자식으로 imgTag가 옴
+		document.body.appendChild(aTag) // 그걸 body에 넣음
+		
+		console.log(aTag)
+	}
+</script>
+</head>
+<body>
+	<!-- <h1>Hello</h1> -->
+	<!-- <img src = "https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png"> -->
+
+</body>
+</html>

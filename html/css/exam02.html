@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	p, h3 {
+		color : red
+	}
+	
+	.c01 {
+		color : blue;
+	}
+	
+	.c02 {
+		color : orange
+	}
+	
+	h3.c02 {
+		background-color: gray
+	}
+	
+	#i01 {
+		color : pink;
+	}
+	
+	#i02 {
+		color : yellow
+	}
+	
+	.c03{
+		background-color: yellow
+	}
+	
+</style>
+</head>
+<body>
+
+	<p class = "c01">안녕하세요</p>
+	<div id = "i01">
+		안녕하세요
+	</div>
+	<h3 class = "c01">안녕하세요</h3>
+	<p class = "c02">안녕하세요</p>
+	<div id = "i02" class = "c01">
+		안녕하세요
+	</div>
+	<h3 class = "c02">안녕하세요</h3>
+	<p id = "i01">안녕하세요</p> <!-- id(특정 태그 하나)와 class(단위) 둘 다 같은 속성값을 가지고 있을 때 우선순위는 id가 더 높음-->
+	<p class = "c01 c03">안녕하세요</p>
+	
+</body>
+</html>

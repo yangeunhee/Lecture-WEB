@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		var tags = document.getElementsByTagName('td') // 태그 이름을 찾으면 복수개가 나올 수 있기 때문에 elements (tag의 이름이 td인 것들을 tags로 저장)
+		 console.log(tags[0]) // ID
+		console.log(tags[1]) // PASSWORD 
+		tags[0].innerHTML = '아이디' // tags[0]의 값인 id를 아이디로 변경
+		
+		/* let nodes = document.querySelector('td') // td태그를 가진 것
+		console.log(nodes) // 콘솔창에 찍음 -> 근데 td태그를 가진 것들은 아이디와 PASSWORD가 있는데 아이디 하나만 나옴 -> querySelector의 특징 -> 전부다 나오게 하려면 querySelectorAll */
+		
+		let nodes = document.querySelectorAll('td') // td태그를 가진 것들 모두
+		nodes[1].innerText = '패스워드'	// 중에 1번지에 있는 것의 값을 패스워드로 변경
+	}
+</script>
+</head>
+<body>
+	<table border="1" style="width: 100px; height: 100px">
+		<tr>
+			<td>ID</td>
+		</tr>
+		<tr>
+			<td>PASSWORD</td>
+		</tr>
+	</table>
+</body>
+</html>

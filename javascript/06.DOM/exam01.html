@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//console.log(document)	// null값 (왜냐면 아직 body만들지 않음. JS는 위에서 아래로 읽으면서 실행하기때문)
+	window.onload = function(){ // 하지만 window.onload를 만들면? -> body에 있는 내용이 실행 되고 난 후 script부분을 실행하므로 이 객체는 존재함
+		alert('innerHTML : ' + document.body.innerHTML) // 태그까지 나오게 하는 것
+		alert('innerText : ' + document.body.innerText) // 태그를 떼고 안에 글자만 나오게 하는 것
+		alert(document.body)
+	
+		let tags = ''
+		tags += '<ul>'
+		tags += '<li>red</li>'
+		tags += '<li>orange</li>'
+		tags += '<li>blue</li>'
+		tags += '</ul>'
+		
+		//document.write : body태그에서 실행되도록 하는 것
+		//document.write(tags)
+		//document.body.innerHTML = tags // document의 body태그의 immerHTML에 글자를 쓰겠다. -> 동적으로 HELLO와 안녕하세요는 지워지고 ui태그의 내용만 남게됨
+		//document.body.innerText = tags // 태그까지 일반 text로 인식해서 body부분에 태그까지 함께 나오게됨
+		//document.body.innerHTML += tags // script내용과 body내용이 함께 나옴
+		document.body.innerHTML += '<br>' // br은 html로 인식하게 만들어주고
+		document.body.innerText +=  tags // 나머진 tags만 출력
+	}
+</script>
+</head>
+<body>
+
+	<!-- 
+		document 객체
+		body태그에 무슨 내용이 들어있는지 궁금해
+		window onload와 관련있음 (왜? body안에 있는 내용을 알게 하기 위해(script실행전에 처리해야하기 때문))
+		-> 웹브라우저 화면에 어떤 내용이 나왔잖아 도대체 무슨 내용이 바디태그에 있니?를 알고싶음
+		-> 웹브라우저안에 화면에 바디태그를 적용한게 나와야하므로 window onload가 다 수행되고 난 후에 나와야함
+		
+		우리가 알고싶은건 웹브라우저내용(body내용) -> document.body.~
+																   : 객체값이 나옴
+														 innerHTML : 태그까지 나오게 하는 것
+														 innerText : 태그는 떼고 안에 글자 내용물만 나오게 하는 것
+														 
+	 -->
+	HELLO<br>
+	<h1>안녕하세요</h1>
+
+</body>
+</html>

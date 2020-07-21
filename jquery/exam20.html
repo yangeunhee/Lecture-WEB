@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#btn01').click(function(){
+			$('img').before('<strong>before</strong>', '<br>') // 태그의 왼쪽에 들어오고싶다 (한 단계 앞)
+			$('img').after('<strong>after</strong>') // 태그의 오른쪽에 들어오고싶다 (한 단계 뒤)
+		})
+	})
+</script>
+</head>
+<body>
+	<h1>Hello</h1>
+		<img src = "https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png">
+	<h2>Bye</h2>
+	<button id = "btn01">추가</button>
+</body>
+</html>

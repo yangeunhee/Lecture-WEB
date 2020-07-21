@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	/*고전적 이벤트 모델 방식
+	window.onload = function(){
+		let btn = document.getElementById('btn')
+		btn.onclick = function(){
+			
+		}
+	} */
+		
+		
+		/*
+			DOM level 2
+			표준 이벤트 모델 = addEventListener(이벤트속성, handler, capturing사용 야부)
+			capturing을 설정 안하면 버블링 발생
+			capturing 값이 true가 되면  버블링 false -> 이벤트의 흐름이 상위에서 하위로 움직임
+			원래는 버블링이 우선이므로 이벤트 흐름을 바꿔주기 위해선 캡쳐링을  true값으로
+			(버블링 : 이벤트 흐름이 하위 -> 상위,  캡쳐링 : 이벤트 흐름이 상위 -> 하위)
+		*/
+		
+		window.onload = function(){
+			let btn = document.getElementById('btn')
+			btn.addEventListener('click', function(){
+				alert('button click')
+				}, true) // true값으로 바꿔주면 button click -> span click
+				
+				// 위의 true값을 설정을 안해주면 버블링 발생 (span click이 나오고 button click이 나온다)
+				let span = document.querySelector('span')
+				span.addEventListener('click', function(){
+					alert('span click')
+				})
+			}
+</script>
+</head>
+<body>
+
+	<button id = "btn"><span>CLICK</span></button>
+
+</body>
+</html>

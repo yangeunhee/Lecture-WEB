@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*
+		try~catch 예외처리
+	
+	*/
+
+	try{
+		throw new Error("사용자에러!!!")
+ 		let array = new Array(8888888888888888888888)
+	} catch(e){
+		alert("예외가 발생하였습니다")
+		console.log(e)
+		for(var i in e.message){
+			document.write(i + " : " + e[i] + "<br>")
+		}
+	} finally {
+		console.log("finally 구문 진입")
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

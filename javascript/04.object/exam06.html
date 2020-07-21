@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//person이 object를 상속받음
+	function Person(name, phone, addr) {
+		this.name = name; // 니가 지금만든 객체에.멤버변수를 추가하자 = 날아오는 값으로
+		this.phone = phone;
+		this.addr = addr;
+
+		this.info = function() {
+			var msg = '';
+			for ( let key in this) {
+				if ((typeof this[key] != 'function'))
+					msg += key + " : " + this[key] + "<br>"
+			}
+			document.write(msg)
+		}
+	}
+	var p = new Person('홍길동', '010-1111-2222', '경기도 광명시') // 객체 생성 및 할당
+	p.info()
+
+	var p2 = new Person();
+	p2.info();
+
+	// 동적으로 prototype 추가
+	// 선언
+	Person.prototype.aaa = function() { // person객체에 prototype에 aaa이라는 함수 하나 추가
+		alert('aaa');
+	}
+	//호출
+	//console.log(p) // 이것도 되지만
+	//내꺼니까 이렇게 호출하는 것도 가능
+	p.aaa(); // aaa
+	p2.aaa(); /// aaa
+
+	document.write('p instanceof Person : ' + (p instanceof Person) + "<br>")
+	document.write('p instanceof Object : ' + (p instanceof Object) + "<br>")
+	
+	Person.prototype.aaa = function(){
+		alert('change')
+	}
+	p.aaa(); // change
+	p2.aaa(); // change
+	
+	p.aaa = function(){ // 프로토타입이 아님. 자신의 객체 안에 함수를 담은것 (13번째 줄과 동일한 것)
+		alert('p에서 정의한 aaa()')
+	}
+	p.aaa();	// p에서 정의한 aaa()(우선순위는 자신의 객체에서 선언한 것이 더 높다)
+	p2.aaa();	// change
+</script>
+</head>
+<body>
+
+</body>
+</html>

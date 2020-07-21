@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	div {
+		width : 300px;
+		margin : 10px;
+		padding : 10px;
+		text-align : center;
+		border : 2px solid red; /* 한번에 설정 */
+		/* display : inline;  inline태그(글자 공간만큼만 공간할당) div는 원래 블럭태그인데 옆으로 나오게 하고싶을 때 쓰는거 */
+		display : table-cell; /* inline이 아니더라도 옆으로 가게함 */
+	}
+	
+	.div01 {
+		border-radius: 20px;	/* 사각형 각을 둥글게 */
+	}
+	
+	/*
+	.div02{
+		border-radius: 20px;
+		border-bottom-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+	*/
+	
+	.div02{
+		border-bottom-right-radius: 20px;
+		border-top-left-radius: 20px;
+		box-shadow: 10px 10px 10px 10px; /* 가로, 세로, 밑으로 얼만큼 확장할건지 */
+	}
+	
+	.div03{
+		border-radius: 60px/30px; /* 가로는 60, 세로는 30 타원형 */
+		height : 100px;
+	}
+	
+</style>
+</head>
+<body>
+
+	<div class = "div01">사각형1</div>
+	<div class = "div02">사각형2</div>
+	<div class = "div03">사각형3</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var person = {
+		name : '홍길동',
+		phone : '010-1111-2222',
+		toString : function() {
+				let msg = '';
+				for (let key in this) {
+					if ((typeof this[key]) != 'function')
+						msg += key + ' : ' + this[key] + '<br>';
+			}	
+				msg += "<hr>"
+				return msg
+		}
+	};
+	
+	//깊은 복사를 하기 위한 clone함수 생성
+	function clone(obj){
+		let object = {};
+		for(let key in obj){
+			object[key] = obj[key];
+		}
+		return object;
+	}
+	
+	
+	// 얕은 복사 //주소값 복사
+	// var person2 = person;
+	
+	// 깊은 복사 // 값 전체 복사
+  	var person2 = {...person} // 배열도 객체임 객체 종결자 사용가능
+	//var person2 = clone(person);
+	
+	/* var person2 = {};
+	for(let key in person){
+		person2[key] = person[key]
+	}  */
+	
+	document.write(person.toString());
+	document.write(person2.toString());
+	
+	person2.phone = '010-6666-7777';
+	
+	document.write(person.toString());
+	document.write(person2.toString());
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

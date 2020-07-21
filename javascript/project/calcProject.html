@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>계산기 예제</title>
+    <style>
+    	td {
+    		width : 100%;
+    	}
+    </style>
+    
+    <script>
+
+    	function insert(char){
+    		var input = document.getElementById('input')
+    		input.value = input.value + char;
+    	}
+    	function cal(){
+    		val input = document.getElementById('input') // 사용자가 입력한 값
+    		val output = eval(input.value)	// 결과값 출력
+    		document.getElementById('output').value = output;
+    	}
+    	function reset() {
+            document.getElementById('input').value = "";
+            document.getElementById('output').value = "";
+        }
+    </script>
+    
+</head>
+<body>
+    <table border="1" style = "width : 100px">
+        <tr>
+            <td colspan="4">
+                <input type="text" style = "width : 160px" id = "input"> <!-- 값을 입력해주는 구간 -->
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <input type="text" style = "width : 160px" id = "output"> <!-- 값을 출력해주는 구간 -->
+            </td>
+        </tr>
+ 
+        <tr>
+            <td onclick = "insert(7)" >7</td>
+            <td onclick = "insert(8)" >8</td>
+            <td onclick = "insert(9)" >9</td>
+            <td onclick = "insert(/)" >/</td>
+        </tr>
+        
+        <tr>
+            <td onclick = "insert(4)" >4</td>
+            <td onclick = "insert(5)" >5</td>
+            <td onclick = "insert(6)" >6</td>
+            <td onclick = "insert(*)" >*</td>
+        </tr>
+       		
+        <tr>
+            <td onclick = "insert(1)" >1</td>
+            <td onclick = "insert(2)" >2</td>
+            <td onclick = "insert(3)" >3</td>
+            <td onclick = "insert(=)" >=</td>
+        </tr>
+        
+        <tr>
+            <td onclick = "insert(0)" >0</td>
+            <td onclick = "insert(.)" >.</td>
+            <td onclick = "insert(+)" >+</td>
+            <td onclick = "insert(%)" >%</td>
+        </tr>
+        
+        <tr>
+           	<td onclick = "insert(=)" colspan = "2">=</td>
+            <td onclick = "insert(clear)" colspan = "2">clear</td>
+        </tr>
+    </table>
+</body>
+</html>

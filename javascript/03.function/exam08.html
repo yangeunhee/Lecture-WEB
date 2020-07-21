@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+/* 5. 이것도 가능
+	var func = function(i){
+		setTimeout(function(){
+			alert(i);
+		},0);
+	}
+	
+	for(var i = 0; i<3; i++){
+		//func(i);
+		(function(i){
+			setTimeout(function(){
+				alert(i);
+			},0);
+		})(i);
+	} 
+*/
+	/* 4. // 이렇게 해줘야 나옴*/
+	function func(i) {
+		setTimeout(function() {
+			alert(i); // 이건 setTimeout이 끝난다음에야 찍어줌
+		}, 0);
+	}
+
+	for (var i = 0; i < 3; i++) {
+		func(i);
+	} 
+
+	/* 	//3.  i : 0,1,2를 기억시키게 하기위함
+	 // setTimeout이 i값을 찍는 것이 목적
+	 // 실제 for문이 싹 돌아가고 난 다음에야 출력됨(아래 예제)
+	 // 0,1,2를 출력시키기 위해 함수를 분리함
+	 // func이 끝나고 나서 set함수를 호출하고싶다 근데 i는 set만갖고있다.
+	 // 이래서 closure함수를 사용하는것
+	 // i는 for문이 다 돌아가고 난 다음에야 찍힘
+	 var func = function(i) {
+	 return setTimeout(function() {
+	 alert(i);
+	 }, 0);
+	 }
+
+	 for (var i = 0; i < 3; i++) {
+	 func(i);
+	 } */
+
+	// 2. 출력결과가 0,1,2로 나와야하는거 아닌가요? 3만 3번나옴
+	// setTimeout은 js에 있는 모든 문법들이 다 수행이 되고 난 다음에서야 수행이 됨
+	// i-0,1,2일때 다 들어갔다가 나왔다가 나중에서야 실행함
+	// 3번은 실행해야하고 0,1,2는 이미 지나갔기 때문에 3이 3번나온다
+	// 이런 문제를 해결하기 위해 closer를 사용
+	/* for(var i = 0; i < 3; i++){
+		setTimeout(function(){
+			alert(i);
+		},0);
+	} */
+
+	//1. setTimeout은 제어권이 자기한테 없음 실행되면 제어권이 다른곳으로 넘어가고 alert이 다 실행되고 나서 제어권이 자기한테 돌아옴
+	/* alert("첫번째");
+	setTimeout(function(){
+		alert('setTimeout()...');
+	}, 1000);
+	alert("두번째"); */
+</script>
+</head>
+<body>
+
+</body>
+</html>

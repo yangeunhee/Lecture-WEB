@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function checkForm() {
+
+		let f = document.searchForm
+		// if(f.searchType.selectedIndex == 0){ // 아래랑 같음
+		if (f.searchType[0].selected) { //searchType[0] : 선택하세요 / document.searchForm의 searchType[0]가 selected되었을 때
+			alert("검색항목을 선택하세요")
+			return false
+		}
+		
+		
+		/* if (f.searchWord.value == "") { // 검색어에 아무런 값이 입력되지 않았을 때
+			alert("검색어를 입력하세요")
+			return false
+		} */
+		
+		 // 배열을 사용해서 처리하는 방법
+		 let words = ['','제목','작성자'];
+		 if (f.searchWord.value ==''){
+			 /* 
+			 	switch문을 사용해서 처리하는 방법
+			 let keyword = ''
+			 switch(f.searchType.selectedIndex){
+			 case 1:
+				 keyword = "제목"
+				 break;
+				 
+			 case 2:
+				 keyword =  "작성자"
+				 break;
+			 } */
+			 alert("검색할 " + words[f.searchType.selectedIndex] +"를 입력하세요")
+			 f.searchWord.focus()
+			 return false
+			}
+		 
+		 if(f.searchWord.value.length < 2){
+		 alert("검색어는 2글자 이상 입력하세요")
+		 f.searchWord.focus()
+		 return false
+		 }
+		return true
+		}
+		
+</script>
+</head>
+<body>
+	<form action="http://www.naver.com" name="searchForm"
+		onsubmit="return checkForm()">
+		<!-- onsubmit : submit버튼 눌렀을 때 허용하겠습니까? (action을 수행하시겠습니까?) -->
+		<select name="searchType">
+			<option>선택하세요</option>
+			<option>제목</option>
+			<option>작성자</option>
+		</select> <input type="text" name="searchWord"> <input type="submit"
+			value="검색">
+	</form>
+
+</body>
+</html>

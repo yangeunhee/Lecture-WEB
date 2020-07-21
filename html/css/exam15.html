@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+	h1 ~ h2 { /* h1을 기준으로 오른쪽 방향으로 진행하면서 h2를 찾는다 (h1은 포함x) */
+		color : red;
+	}
+
+	h1 + h2 { /* h1바로 뒤쪽으로 나오는 애들중에 h2인애 (바로 뒤에 h2가 없으면 다음 h1을 찾는다.) */
+		color : blue;
+	}
+</style>
+</head>
+<body>
+
+<h2>Header2-1</h2>
+<h1>Header1-1</h1>
+<h3>Header3-1</h3>
+<h2>Header2-2</h2>
+<h2>Header2-3</h2>
+<h2>Header2-4</h2>
+<h2>Header2-5</h2>
+<h1>Header1-2</h1>
+<h2>Header2-6</h2>
+
+</body>
+</html>

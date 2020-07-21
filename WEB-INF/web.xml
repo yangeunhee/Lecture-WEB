@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Lecture-WEB</display-name>
+  
+  	<servlet>
+  		<servlet-name>tableServlet</servlet-name>
+  		<servlet-class>kr.ac.kopo.servlet.TableServletExam</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>tableServlet</servlet-name>
+  		<url-pattern>/servlet/table</url-pattern>
+  	</servlet-mapping>
+  
+    <servlet>
+  	<servlet-name>pinfoResult</servlet-name>
+  	<servlet-class>kr.ac.kopo.servlet.PinfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>pinfoResult</servlet-name>
+  	<url-pattern>/pinfoResult</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>exam</servlet-name>
+  	<servlet-class>kr.ac.kopo.servlet.ExamMethodServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>exam</servlet-name>
+  	<url-pattern>/examMethod</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>method</servlet-name>
+  	<servlet-class>kr.ac.kopo.servlet.MethodServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>method</servlet-name>
+  	<url-pattern>/method</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>hello</servlet-name>
+  	<servlet-class>kr.ac.kopo.servlet.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>hello</servlet-name>
+  	<url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+  	<servlet-name>hello</servlet-name>
+  	<url-pattern>/hi</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

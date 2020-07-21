@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$('h1').click(function(event, data){
+			 $(this)[0].innerHTML += data	//$(this)[0].innerHTML : 수행률 (여기 innerHTML은 js문법이므로 jquery문법으로 대체하자(나중에 배움))
+		})
+		
+		setInterval(function(){
+			$('h1').trigger('click', '* ') // trigger : 내가 강제로 이벤트를 발생시키고싶다. (위에 있는 이벤트를 실행하도록 click이벤트 발생시키기)
+		},1000)
+	})
+	
+</script>
+</head>
+<body>
+	<h1>수행률 : </h1>
+</body>
+</html>

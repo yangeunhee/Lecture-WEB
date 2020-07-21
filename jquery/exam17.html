@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		/*	js 함수 사용해서 글자 뽑아내기
+		let pTag = document.getElementsByTagName("p")
+		let html = pTag[0].innerHTML
+		let text = pTag[0].innerText */
+		
+		/* jquery 함수 사용해서 글자 뽑아내기 */
+		let html = $('p').html()	// js의 innerHTML과 동일
+		let text = $('p').text()	// js의 innerText와 동일하지 않음 / 여러개의 p태그를 가진 것들의 마크업을 빼고 모두 다 리턴
+		
+		alert("추출된 html : " + html + '\n추출된 text : ' + text)
+		
+		/*	js 함수를 활용하여 속성 뽑아내기			
+		let aTag = document.querySelector('a') // 뒤의 태그나 아이디나 클래스에 관련된(여러개가 나오더라도 제일 첨에 나오는거)것을 뽑아냄
+		//let attr = aTag.href
+		let attr = aTag.getAttribute('href') // href라는 것의 속성을 뽑아내겠다 */
+		
+		/* jquery를 활용하여 속성 뽑아내기 */
+		let attr = $('a').attr('href')
+		alert("추출된 attr : " + attr)
+		
+		$('button').click(function(){
+			/* js를 활용하여 이름을 입력하고 button을 클릭했을 때 그 이름 값을 추출
+			 let inputTag = document.getElementById('name')
+			let name = inputTag.value
+			alert('입력된 이름 : ' + name) */
+		
+		/* jquery를 활용하여 이름을 입력하고 button을 클릭했을 때 그 이름 값을 추출 */
+			let name = $('#name').val()
+			alert('입력된 이름 : '+ name)
+		})
+	})
+</script>
+</head>
+<body>
+	<p>내이름은 <b>홍길동</b>이고, 별명은 <i>의적</i>입니다</p>
+	<p>내이름은 <strong>홍길순</strong>이고, 별명은 <em>의적2</em>입니다</p>
+	<a href = "http://www.naver.com">네이버</a><br>
+	이름 : <input type = "text" id = "name">
+	<button>입력완료</button>
+</body>
+</html>

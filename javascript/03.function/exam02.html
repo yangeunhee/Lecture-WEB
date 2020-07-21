@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	 function aaa(){
+		alert("call aaa()");
+	}
+	
+	function aaa(data){
+		alert("call aaa(data)");
+	}
+	
+	function aaa(a,b){
+		alert("call aaa(a,b)");
+	}	
+		aaa(10, 20, 30, 40, 50); // 마지막 함수 호출됨
+	
+	
+	// 함수를 결정하는 것은 함수의 이름
+	// 함수를 호출햇을 때 arguments인자가 무조건 있음
+	
+	/* function aaa(){
+		switch(arguments.length){
+		case 0:
+			alert("call aaa()");
+			break;
+		case 1:
+			alert("data : " + arguments[0]);
+			break;
+		case 2:
+			alert("a : " + arguments[0] + ", b : "+ arguments[1]);
+			break;
+		}
+	}*/
+	aaa();
+	aaa("hello");
+	aaa(10, 20);
+	aaa("hello", 20);
+	aaa(10, 20, 30, 40, 50); 
+</script>
+</head>
+<body>
+
+</body>
+</html>

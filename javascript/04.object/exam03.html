@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var person = {
+		'name' : '홍길동',
+		'phone' : '010-1111-2222'
+	}
+
+	var person2 = {
+		'name' : '윤길동',
+		'phone' : '010-3333-4444',
+		'addr' : '서울시 서초구'
+	}
+	
+//	배열객체 생성
+//	var persons = [ person, person2 ];
+
+	// 이렇게도 생성할 수 있음
+	 var persons = [{
+		'name' : '홍길동',
+		'phone' : '010-1111-2222'
+	},{
+		'name' : '윤길동',
+		'phone' : '010-3333-4444'
+	}] 
+	
+	persons.push({
+		'name' : '강길동'
+	});
+
+	for (let index in persons) {
+		let p = persons[index]
+		for ( let key in p) {
+			document.write(`${key} : ${p[key]}<br>`);
+		}
+		document.write("<hr>");
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/* 뭔가를 입력받을 때 쓰는 함수  : prompt();(return값 : string)*/
+	var num = prompt('정수를 입력하세요');
+		alert(num + " : " + typeof num); // String값으로 리턴
+		num = Number(num); // Number로 형변환 시켜줌
+		alert(num + " : " + typeof num); // Number타입으로 리턴
+		
+	var msg = num % 2 == 0 ? "짝수 " : "홀수";
+		alert(msg);
+		
+		switch(num%2){
+		case 0 :
+			alert(num + "은 짝수입니다.");
+			break;
+		case 1:
+			alert(num + "은 홀수입니다.");
+			break;		
+		}
+</script>
+</head>
+<body>
+
+</body>
+</html>

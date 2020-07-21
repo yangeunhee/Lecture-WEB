@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>EVERDEVEL :: 제이쿼리 강좌</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+<script type="text/javascript">
+$(function(){
+  var text1 = $('.text1');
+  text1.focus(function(){
+    text1.val('포커스를 얻었습니다.');
+  });
+  text1.blur(function(){
+    text1.val('포커스를 벗어났습니다. .');
+  });
+});
+</script>
+<style>
+</style>
+</head>
+<body>
+<input type="text" class="text1" value="input your name" />
+<input type="text" class="text2" value="input your id" />
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+	var input = prompt("1~100까지 숫자를 입력하세요") // 숫자입력받고
+	var cnt = 0; // 숫자셈
+
+	// 일의자리 숫자가 3, 6, 9면 짝
+	for (cnt = 1; cnt <= input; cnt++) {
+		if (cnt % 10 === 3 || cnt % 10 === 6 || cnt % 10 === 9) {
+			document.write("짝<br>");
+		} else{
+			document.write(cnt + "<br>")
+		} 
+		if(cnt/10 === 0){
+			document.write("뽀숑")
+		}
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

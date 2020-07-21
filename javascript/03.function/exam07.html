@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	var won = "1000원";
+	var dollar = "1.78$";
+	
+	//내장객체는 앞에 대문자로 시작, 함수는 소문자로 시작
+	document.write("Number : " + Number(won) + "<br>"); // Number(str)을 할 때 무조건 숫자만 들어가거나 문자만 들어가야함
+	document.write("parseInt : " + parseInt(won) + "<br>"); // 나올수 있는 것의 최대가 나옴
+	document.write("parseInt : " + parseInt(dollar) + "<br>"); // 정수만 나옴
+	document.write("parseFloat : " + parseFloat(dollar) + "<br>"); // 소숫점까지 나옴
+	
+	document.write("<hr>");
+
+	var str = "12345";
+	var num = Number(str);
+	var num2 = parseInt(str);
+	
+	document.write(str + 100 + "<br>");
+	document.write(num + 100 + "<br>");
+	document.write(num2 + 100 + "<br>");
+	
+	setTimeout(function() {
+		
+	}, ms)
+</script>
+</head>
+<body>
+
+</body>
+</html>

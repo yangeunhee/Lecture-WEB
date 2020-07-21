@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: absolute;
+}
+</style>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> <!-- backgroungColor 사용하기위함 -->
+<script>
+	$(document).ready(function() {
+		$('div').animate({
+			'width' : '200px'
+		}, 1000)
+
+		$('div').animate({
+			left : '100px',
+			width : '100px'
+		}, 2000)
+
+		$('div').animate({
+			'height' : '200px',
+			'top' : '100px'
+		}, 1000)
+
+		$('div').animate({
+			'height' : '100px',
+			left : '0px',
+			top : '200px',
+			opacity : '0.4',
+			backgroundColor : 'blue',
+			'border-radius' : '50%'
+		}, 2000, function(){
+			$(this).css('backgroundColor', 'pink')
+		})
+	})
+</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

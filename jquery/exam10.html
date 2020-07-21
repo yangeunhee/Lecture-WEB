@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- <script src = "/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script> -->
+<script src = "http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	$(window).load(function(){ // jquery에서의 window객체표기 : $(window)
+		console.log('load')
+	})
+	
+	$(window).resize(function(){ // jquery에서의 window객체표기 : $(window)
+		console.log('resize')
+	})
+	
+	$(window).scroll(function(){ // jquery에서의 window객체표기 : $(window)
+		console.log('scroll')
+	})
+	
+	// ready가 제일 먼저 나옴
+	$(window).ready(function(){ // jquery에서의 window객체표기 : $(window)
+		console.log('ready')
+	})
+</script>
+</head>
+<body>
+
+</body>
+</html>

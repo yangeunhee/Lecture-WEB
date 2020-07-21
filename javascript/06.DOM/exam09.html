@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function showInfo() {
+		let list = '';
+		let hobbys = document.inputForm.hobby; // form 태그에 접근할 때 name 속성으로 접근할 수 있다. (유일하게 form태그만 가능) / document.form name.input name
+		for (let i = 0; i < hobbys.length; i++) {
+			if (hobbys[i].checked) { // checked 값에 접근
+				list += hobbys[i].value + "\n"
+			}
+		}
+		alert(list)
+	}
+
+	/* 1. 각 기능별로 함수 정의하기
+	
+	function selectAll(){
+		let select = document.inputForm.hobby;
+		for(let i = 0; i < select.length; i++){
+			select[i].checked = true;
+		}
+	}
+	
+	function deSelectAll(){
+		let deselect = document.inputForm.hobby;
+		for(let i = 0; i < deselect.length; i++){
+			deselect[i].checked = false;
+		}
+	} */
+
+	////////////////////////////////////////////////////////////////////////
+	/*  2. 어차피 같은 역할을 수행하는 것들이므로 하나의 function으로 정의할 수도 있음
+	
+	function toggle(check){
+		for(let i in document.inputForm.hobby){
+			document.inputForm.hobby[i].checked = check;
+		}
+	} */
+
+	////////////////////////////////////////////////////////////////////////
+	/* 3. 한 곳에서 다른 역할 수행*/
+
+	function toggle() {
+		let hobbys = document.inputForm.hobby
+		/*
+		 가장 기본적인 형태 -> 2개를 선택하고 클릭했을 경우 나머지 2개가 선택되는 오류 발생 -> 전체가 지워지는 function으로 정의하고싶다
+		for(let i in hobbys){
+			hobbys[i].checked = !hobbys[i].checked // 내 값이  true면 false로, false면 true로 바꿈
+		}*/
+
+		let check = false
+		for (let i = 0; i < hobbys.length; i++) {
+			if (!hobbys[i].checked) { // 하나라도 false값이 있으면
+				check = true // 모두 선택됨
+				break;
+			}
+		}
+			// false값이 하나도 없으면 (모두가 선택되었을때)
+			for (let i = 0; i < hobbys.length; i++) {
+				hobbys[i].checked = check; //전체가 선택됨
+			}
+		}
+
+		/* for(let i =0; i<hobbys.length; i++){
+			hobbys[i].checked = check;
+		} */
+
+		/* 
+			내가한거 (오류)
+		if(hobbys[i].checked === true){
+			hobbys[i].checked = !hobbys[i].checked
+			} else {
+				hobbys[i].checked = false
+			}
+		if(hobbys[0].checked === false && hobbys[1].checked === false && hobbys[2].checked === false){
+			hobbys[i].checked = true
+		} */
+	
+</script>
+</head>
+<body>
+	<form action="" name="inputForm">
+		<!-- form 태그 name = "inputForm" -->
+		당신의 취미는?<br> <input type="checkbox" name="hobby" value="music">음악감상<br>
+		<!-- input 태그 name -->
+		<input type="checkbox" name="hobby" value="movie">영화감상<br>
+		<input type="checkbox" name="hobby" value="hiking">등산<br>
+		<input type="checkbox" name="hobby" value="game">게임<br>
+
+		<!-- <input type = "button" value = "전체선택" onclick = "selectAll()"><br>
+	 	<input type = "button" value = "전체취소" onclick = "deSelectAll()"><br> -->
+
+		<!-- <input type = "button" value = "전체선택" onclick = "toggle(true)"><br>
+	 	<input type = "button" value = "전체취소" onclick = "toggle(false)"><br> -->
+
+		<input type="button" value="전체선택/해제" onclick="toggle()">
+		<input type="button" value="결과보기" onclick="showInfo()">
+		<!-- inline 방식 여기선 window.onload가 무의미. 왜냐면 저걸 클릭했다는건 이미 웹브라우저를 다 실행했다는 뜻이기 때문 -->
+	</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		let idTag = document.getElementById('id') // id가 id인 녀석을 지우고싶다
+		//나의 부모를 찾아서 그 부모의 자식중 하나를 지우려고 하는데 그게 idTag인 놈
+		
+		idTag.parentNode.removeChild(idTag)
+		//idTag인 나 자체를 지울거야
+		//idTag.remove() // 이거 익스플로러에서 안먹힘
+		
+		pwd = document.getElementById('pwd')
+		// <td id = "id" style = "color:red; font-size : 20pt; background-color : yellow;">
+		pwd.style.color = 'red'
+		pwd.style.fontSize = '20pt'
+		pwd.style.backgroundColor = 'yellow'
+		pwd.style['border-style'] = 'dashed'
+		pwd.style['border-color'] = 'blue'
+		pwd.style['border-width'] = '3px'
+	}
+</script>
+</head>
+<body>
+	<table border="1" style="width: 100px; height: 100px">
+		<tr>
+			<td id="id">ID</td>
+		</tr>
+		<tr>
+			<td id="pwd">PASSWORD</td>
+		</tr>
+	</table>
+
+</body>
+</html>

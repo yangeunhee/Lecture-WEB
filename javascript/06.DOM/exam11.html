@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/* function clickData(obj) {
+		let data = obj.value
+		
+		let monitor = document.getElementById("monitor")
+		if(data == "clear"){
+			monitor.value = '';
+		} else if(data == "="){
+			monitor.value = eval(monitor.value)
+		}else {
+		monitor.value += data;
+		}
+	} */
+	function clickData(data) {
+		let monitor = document.getElementById("monitor")
+		if(data == 'clear') {
+			monitor.value = '';
+		} else if(data == '=') {
+			monitor.value = eval(monitor.value)	
+		} else {
+			monitor.value += data
+		}
+	}
+</script>
+<style>
+	#monitor{
+		text-align : right
+	}
+	
+	input[type = button]{
+		padding : 0px 20px;
+		margin : 0px 5px;
+	}
+</style>
+</head>
+<body>
+	<input type = "text" id = "monitor"><br>
+	<input type = "button" value = "1" onclick="clickData(this.value)">
+	<input type = "button" value = "2" onclick="clickData(this.value)">
+	<input type = "button" value = "3" onclick="clickData(this.value)">
+	<input type = "button" value = "4" onclick="clickData(this.value)"> <br>
+	<input type = "button" value = "+" onclick="clickData(this.value)">
+	<input type = "button" value = "-" onclick="clickData(this.value)">
+	<input type = "button" value = "=" onclick="clickData(this.value)">
+	<input type = "button" value = "clear" onclick="clickData(this.value)">
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('button').click(function(){
+			// $('img').first().appendTo('body') // img태그의 첫번째에 있는걸 body쪽으로 가져온다
+			$('img').last().prependTo('body')
+		})
+	})
+</script>
+</head>
+<body>
+	
+	<img src = "/Lecture-WEB/jquery/img/dog.jpg">
+	<img src = "/Lecture-WEB/jquery/img/dog2.jpg">
+	<img src = "/Lecture-WEB/jquery/img/dog3.jpg">
+	<img src = "/Lecture-WEB/jquery/img/dog4.jpg">
+	<button>클릭</button>
+	<br>
+	
+</body>
+</html>

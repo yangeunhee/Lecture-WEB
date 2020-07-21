@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	p:only-child { /* body밑에 자식이 하나만 있어야함 그 태그가 p일때//근데 여기선 body밑에 태그가 여러가지 있고 div아래에 p태그가 하나 있기 때문에 거기에 적용이 됨 */
+	color: red;
+}
+
+	p:only-of-type{ /* 내 밑에 자식이 몇 개 있던 상관 없어 근데 p태그가 하나만 있니? // 만약 같은 태그를 가진 것이 여러개 있으면 아예 안나옴*/
+		background-color: yellow;
+	}
+</style>
+</head>
+<body>
+	<p>
+	good!!!
+	</p>
+	<h3>안녕!!!</h3>
+	<div>
+		<p>Hello World</p>
+	</div>
+</body>
+</html>

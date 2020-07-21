@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+/*
+	static : 디폴트 (안겹치게 나열)
+	absolute : 조상기준으로 위치조정
+	fixed : 화면에 고정되기 때문에 스크롤을 움직여도 그 자리에 있음
+	relative : static기준의 위치조정
+*/
+	div {
+		 position : fixed;  /* 다른 데이터와 겹치지 않도록 순차적으로 보여줘 (이게 있으면 left, right 이런 변수가 적용되지않는다.) */
+		left : 50px;
+		background-color: red;
+		width : 100px;
+		height : 100px;
+	}
+	
+	.div01 {
+		background-color: red;
+		position : absolute;
+		left : 100px;
+	}
+	
+	.div02{
+		background-color: blue;
+	}
+	.div03{
+		background-color: yellow;
+		width : 1000px;
+		height : 2000px;
+		z-index : -1;
+		position : static;
+	}
+
+</style>
+
+</head>
+<body>
+
+	<div class = "div01">첫번째 사각형</div>
+	<div class = "div02">두번째 사각형</div>
+	<div class = "div03">세번째 사각형</div>
+
+
+
+</body>
+</html>

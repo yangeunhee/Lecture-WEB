@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/* function loadCall(){
+		alert("load 완료")
+	} */
+	
+	// window객체 안에 onload라는 함수가 있는데 그게 undefined임
+	// 내 입맛에 맞게 내가 재정의하는과정
+	window.onload = function(){
+		alert("load complete")
+	}
+</script>
+</head>
+<!-- <body onload = "loadCall()"> --> <!-- 이렇게 해도 되는데 복잡하니까 script 자체에서 window의 onload 함수를 재정의해주자 -->
+<body>
+	<!--
+		body에 있는 모든 태그들을 수행하고 난 후에 script를 실행하고싶어 (onload = "js문법")
+		(body에 있는 것들이 load되고 난 후 onload뒤에 있는 것이 실행됨)
+	-->
+
+	<h1>Hello</h1>
+	<h2>Good</h2>
+	<img src = "https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png"><br>
+	<img src = "https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png"><br>
+	<img src = "https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png"><br>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		 $('#btn01').click(function(){
+			/* <js 문법>
+			let h1Tag = document.createElement('h1') // h1태그 생성
+			let text = document.createTextNode('세 번째 문장') // 세 번째 문장이라는 text를 생성
+			h1Tag.appendChild(text) // h1태그의 아이로 text를 넣음
+			document.querySelector('div').appendChild(h1Tag) // div태그를 찾고 거기 아래에 h1Tag를 넣어줌 */
+			
+			/* <jquery 문법> */
+			$('div').append('<h1>세 번째 문장</h1>') // div태그를 찾아서 그 자식에 저런 기능을 넣어준다
+		})
+		
+		$('#btn02').click(function(){
+		//	$('ol').append('<li>노랑</li>') // append : 마지막 자식으로 추가됨
+		$('ol').prepend('<li>노랑</li>') // prepend : 첫 번째 자식으로 추가됨
+		})
+		
+		$('#btn03').click(function(){
+			/* $('body').prepend('<h4>추가된 문장</h4>')
+			$('body').prepend('<h3>또 추가된 문장</h3>')
+			$('body').prepend('<h5>또또 추가된 문장</h5>') */
+			$('body').prepend('<h4>추가된 문장</h4>', '<h3>또 추가된 문장</h3>', '<h5>또또 추가된 문장</h5>')
+		})
+	})
+</script>
+</head>
+<body>
+	<div>
+		<h1>첫 번째 문장</h1>
+		<h1>두 번째 문장</h1>
+	</div>
+	<h2>색상표</h2>
+	<ol>
+		<li>빨강</li>
+		<li>파랑</li>
+		<li>녹색</li>
+	</ol>
+	
+	<button id = "btn01">문장추가</button>
+	<button id = "btn02">색상추가</button>
+	<button id = "btn03">본문추가</button>
+
+	
+</body>
+</html>

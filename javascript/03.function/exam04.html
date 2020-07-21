@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function returnFunc(name){
+		var msg = "반갑습니다 " + name + "님";
+		return function(){ // 익명함수 리턴 // return을 하면서 매세지를 찍어줌 // closure함수 // 글로벌한 변수를 사용하고싶음(var형의 변수는 함수가 끝나면 사라지는데 그 변수가 함수가 사라져도 남아있게 하기위함)
+			alert(msg);
+		};
+	}
+
+	//returnFunc 함수가 끝났으면 msg 변수가 사라짐 그걸 남겨두기 위해 안에서 함수를 하나 더 호출. 두 번째 함수가 끝났다 하더라도 msg변수를 그대로 놓게 하기 위함
+	returnFunc("홍길동")();
+	
+	/* var re = returnFunc('홍길동');
+	re(); */
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

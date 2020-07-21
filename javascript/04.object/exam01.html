@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*
+		객체를 생성하려고 한다.
+		1. 객체 선언 var person = {}
+		2. 내용부에 "속성명" : 속성값 추가
+		3. 만약 속성명에 특수기호가 들어가면 ''이나 ""붙여줘야함
+	*/
+	
+	var person = {
+		name : '홍길동',
+		phone : '010-1111-2222',
+		'phone-home' : '02-1111-2222',
+	};
+	// alert의 우선순위가 높기 때문에 document.write를 먼저 작성해줘도 alert가 먼저 나오고 난 후 document.write가 나온다.
+	document.write('속성 name 존재 여부 : ' + ('name' in person));
+	
+	alert('속성 name 존재 여부 : ' + ('name' in person));
+	alert('속성 phone 존재 여부 : ' + ('phone' in person));
+	alert('속성 addr 존재 여부 : ' + ('addr' in person));
+	
+	console.log(person);
+	// 동적으로 멤버변수 추가 가능
+	person.addr = '경기도 광명시';
+	// 확인
+	console.log(person);
+	alert('속성 addr 존재 여부 : ' + ('addr' in person));
+		
+	//삭제
+	delete(person.addr);
+	//확인
+	alert('속성 addr 존재 여부 : ' + ('addr' in person));
+	
+	/* alert('속성 name 존재 여부 : ' + ('name' in person));
+	alert('속성 phone 존재 여부 : ' + ('phone' in person));
+	alert('속성 addr 존재 여부 : ' + ('addr' in person));
+	alert('name : ' + person.name);
+	alert('phone : ' + person.phone);
+		
+	alert('name : ' +person['name']);
+	alert('phone : ' +person['phone']);
+	alert('phone-home : ' +person['phone-home']); */
+	
+	/* alert(typeof person);
+	alert(person);
+	console.log(person); */
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	h1:first-of-type { /* 같은 형제중에서 h1이 여러가지가 있는데 그중 멘 처음꺼 */
+		color:red;
+	}
+	
+	h2:last-of-type {
+		color:yellow;
+	}
+	
+	p::first-line{
+		text-decoration: underline;
+	}
+	
+	p::first-letter {
+		font-size: 4em;
+	}
+	
+	p::selection { /* 마우스 드래그했을 때 형광펜 효과 */
+		background-color: green;
+	}
+	
+	h2::after{ /* h2태그의 뒤에거 */
+		background-color: blue;
+	}
+</style>
+</head>
+<body>
+
+	<p>
+		ABCDEFGHIJKLMN<br>
+		OPQRSTUVWXYZ
+	</p>
+	
+	<p>
+		abcdefghijklmn<br>
+		opqrstuvwxyz
+	</p>
+
+	<h1>Header-1</h1>
+	<h2>Header-2</h2>
+	<h3>Header-3</h3>
+	<h4>Header-4</h4>
+	<h1>Header-1</h1>
+	<h2>Header-2</h2>
+	<h6>Header-6</h6>
+	<div>
+		<h2>Sub-2</h2>
+		<h1>Sub-1</h1>
+	</div>
+</body>
+</html>

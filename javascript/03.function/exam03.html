@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/* function func(a, b, c){
+		alert("a : " + a + ", b : " + b + ", c : "+ c);
+	} */
+	/* function func(a, b, c){		
+		if(a === undefined)
+			a = 0;
+		if(b === undefined)
+			b = 0;
+		if(c === undefined)
+			c = 0;
+		alert("a : " + a + ", b : " + b + ", c : "+ c);
+	} */
+	
+	// undefined는 boolean값으로 false니까 위에 말고 이런식으로 해도됨
+	/* function func(a, b, c){
+		if(!a) a=0;
+		if(!b) b=0;
+		if(!c) c=0;
+		alert("a : " + a + ", b : " + b + ", c : "+ c);
+	} */
+	
+	/* function func(a, b, c){
+		a = a || 0;
+		b = b || 0;
+		c = c || 0;
+		
+		alert("a : " + a + ", b : " + b + ", c : "+ c);
+	} */
+	
+	// 들어오는 매개변수 값이 없으면 = 0 으로 초기화 한 값을 대입한다.
+	 function func(a=0, b=0, c=0){	
+		alert("a : " + a + ", b : " + b + ", c : "+ c);
+	} 
+	
+	func();
+	func('A');
+	func(10, 20);
+	func(10, 20, 30);
+</script>
+</head>
+<body>
+
+</body>
+</html>

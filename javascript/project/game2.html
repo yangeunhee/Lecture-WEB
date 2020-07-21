@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var num = [ 0, 0, 0 ];
+
+	for (i = 0; i < num.length; i++) {
+		num[i] = Math.floor(Math.random() * 10);
+		for (j = 0; j < i; j++) {
+			if (num[i] == num[j]) {
+				i--;
+			}
+		}
+	}
+
+	var s = 0;
+	var b = 0;
+	var o = 0;
+	var cnt = 0;
+
+	while (cnt < 10) {
+		var input = prompt("숫자를 입력하세요")
+		var inputArr = input.split(' ');
+		s = 0;
+		b = 0;
+		cnt++;
+
+		for (var x = 0; x < 3; x++) {
+			for (var y = 0; y < 3; y++) {
+				if (num[x] == inputArr[y]) {
+					if (x === y) {
+						s++;
+					} else {
+						b++;
+					}
+					break;
+				}
+			}
+		}
+
+		if (s === 0 && b === 0) {
+			o++;
+		}
+
+		if (s === 3) {
+			alert("축하합니다. " + cnt + "번 만에 맞추셨습니다! 컴퓨터가 고른 숫자는 : " + num	+ "이었습니다.");
+			break;
+		} else if (cnt >= 10) {
+			alert("주어진 10회가 지났습니다. 컴퓨터가 고른 숫자는 : " + num);
+		} else if (o === 3) {
+			alert("아웃 3번으로 게임 종료. 컴퓨터가 고른 숫자는 : " + num + "이었습니다.")
+			break;
+		} else {
+			alert(s + "스트라이크, " + b + "볼, " + o + "아웃");
+		}
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

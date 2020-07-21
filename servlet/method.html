@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 여기서 이 가상의 url에 접근할 수 있게 하고싶음 http://localhost:9999/Lecture-WEB/method -->
+	<form action = "/Lecture-WEB/method" method = "get"> <!-- default값은 method가 get방식 -->
+		ID : <input type = "text" name = "id"> <!-- input 태그에는 name 속성이 존재해야함 왜냐면 get방식은  url주소에서 ?뒤에 사용자가 입력한 값이 날아가야하기 때문 -->
+		<input type = "submit" value = "Get 방식 호출">
+	</form>
+	<form action = "/Lecture-WEB/method" method = "post"> <!-- post방식 호출 --> <!-- form 태그를 이용해서만 넘길 수 있음 -->
+		ID : <input type = "text" name = "id">
+		<input type = "submit" value = "Post 방식 호출">
+	</form>
+</body>
+</html>

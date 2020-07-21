@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	let audio = new Audio()
+	audio.src = '/Lecture-WEB/html/images/Kalimba.mp3'
+
+	/* function play(){
+		audio.play()
+	} */
+
+</script>
+</head>
+<body>
+
+	<input type = "button" value = "PLAY" onclick="audio.play()"> <!-- onclick = 왼쪽 마우스를 클릭하면 벌어지는 일을 정의 (여기선 play함수를 실행 -->
+	<input type = "button" value = "STOP" onclick="audio.pause()">
+</body>
+</html>
